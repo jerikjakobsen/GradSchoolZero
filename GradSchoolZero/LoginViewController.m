@@ -1,22 +1,21 @@
 //
-//  ViewController.m
+//  LoginViewController.m
 //  GradSchoolZero
 //
 //  Created by John Jakobsen on 10/27/21.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
 
 @end
