@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sqv-sH-3MX">
-                                <rect key="frame" x="105.5" y="504" width="203" height="32"/>
+                                <rect key="frame" x="76.5" y="504" width="261" height="32"/>
                                 <segments>
                                     <segment title="Student"/>
                                     <segment title="Instructor"/>
@@ -52,7 +52,7 @@
                             <constraint firstItem="toO-W4-jlt" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="3Zu-1n-uvN"/>
                             <constraint firstItem="qN4-5O-KLq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hI-FW-N58"/>
                             <constraint firstItem="toO-W4-jlt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="9Ek-0F-prd"/>
-                            <constraint firstItem="sqv-sH-3MX" firstAttribute="width" secondItem="qN4-5O-KLq" secondAttribute="width" multiplier="0.7" id="A9w-a8-wNK"/>
+                            <constraint firstItem="sqv-sH-3MX" firstAttribute="width" secondItem="qN4-5O-KLq" secondAttribute="width" multiplier="0.9" id="A9w-a8-wNK"/>
                             <constraint firstItem="toO-W4-jlt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jq2-r7-G7u"/>
                             <constraint firstItem="qN4-5O-KLq" firstAttribute="width" secondItem="toO-W4-jlt" secondAttribute="width" id="Ng6-qR-kvd"/>
                             <constraint firstItem="sqv-sH-3MX" firstAttribute="top" secondItem="qN4-5O-KLq" secondAttribute="bottom" constant="25" id="heI-zO-bKH"/>
