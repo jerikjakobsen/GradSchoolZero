@@ -133,26 +133,34 @@
         <!--Courses-->
         <scene sceneID="e63-KI-r9g">
             <objects>
-                <viewController title="Courses" id="RF2-G6-ct6" sceneMemberID="viewController">
+                <viewController title="Courses" id="RF2-G6-ct6" customClass="VisitorCoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3r7-Is-NOb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L02-5c-BBM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="L02-5c-BBM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g7l-E4-zXR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L02-5c-BBM" firstAttribute="top" secondItem="3r7-Is-NOb" secondAttribute="top" id="3md-UG-GhX"/>
+                            <constraint firstItem="L02-5c-BBM" firstAttribute="bottom" secondItem="g7l-E4-zXR" secondAttribute="bottom" id="AVk-0i-Q7a"/>
+                            <constraint firstItem="L02-5c-BBM" firstAttribute="leading" secondItem="g7l-E4-zXR" secondAttribute="leading" id="NPe-ni-X0R"/>
+                            <constraint firstItem="L02-5c-BBM" firstAttribute="trailing" secondItem="g7l-E4-zXR" secondAttribute="trailing" id="SRr-Yc-0Yx"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Courses" id="96c-97-poN"/>
                     <navigationItem key="navigationItem" id="5cT-YP-87v"/>
+                    <connections>
+                        <outlet property="coursesTableView" destination="L02-5c-BBM" id="PGp-bD-qbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQW-Lw-NYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392.753623188406" y="843.75"/>
+            <point key="canvasLocation" x="1492.753623188406" y="853.79464285714278"/>
         </scene>
         <!--Students-->
         <scene sceneID="pce-yV-WFA">
@@ -162,20 +170,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-qh-hfK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-qh-hfK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vxo-jD-hNy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NJC-qh-hfK" firstAttribute="bottom" secondItem="vxo-jD-hNy" secondAttribute="bottom" id="08H-ug-JEy"/>
+                            <constraint firstItem="NJC-qh-hfK" firstAttribute="leading" secondItem="vxo-jD-hNy" secondAttribute="leading" id="0en-l1-ZXG"/>
+                            <constraint firstItem="NJC-qh-hfK" firstAttribute="top" secondItem="AK0-1y-UuD" secondAttribute="top" id="8dg-u1-fEC"/>
+                            <constraint firstItem="NJC-qh-hfK" firstAttribute="trailing" secondItem="vxo-jD-hNy" secondAttribute="trailing" id="Qld-BZ-cc5"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Students" id="iMW-9e-8Xh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bni-ZC-MF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255.072463768116" y="854.46428571428567"/>
+            <point key="canvasLocation" x="2371.0144927536235" y="853.79464285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QHa-Wj-l9o">
@@ -213,6 +226,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="00b-IC-gzx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

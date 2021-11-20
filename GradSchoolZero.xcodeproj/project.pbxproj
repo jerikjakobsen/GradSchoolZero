@@ -14,6 +14,9 @@
 		52434CC32729D3DA003C73AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52434CC12729D3DA003C73AC /* LaunchScreen.storyboard */; };
 		52434CC62729D3DA003C73AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CC52729D3DA003C73AC /* main.m */; };
 		52434CCF2729D540003C73AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CCE2729D540003C73AC /* LoginViewController.m */; };
+		52AFE49F2748B7CA00573F90 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AFE49D2748B7CA00573F90 /* CourseCell.m */; };
+		52AFE4A02748B7CA00573F90 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AFE49E2748B7CA00573F90 /* CourseCell.xib */; };
+		52E817552748D3360091BBC2 /* VisitorCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E817542748D3360091BBC2 /* VisitorCoursesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,11 @@
 		52434CC52729D3DA003C73AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52434CCD2729D540003C73AC /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		52434CCE2729D540003C73AC /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		52AFE49C2748B7CA00573F90 /* CourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
+		52AFE49D2748B7CA00573F90 /* CourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		52AFE49E2748B7CA00573F90 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
+		52E817532748D3360091BBC2 /* VisitorCoursesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorCoursesViewController.h; sourceTree = "<group>"; };
+		52E817542748D3360091BBC2 /* VisitorCoursesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorCoursesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,9 @@
 				52434CC42729D3DA003C73AC /* Info.plist */,
 				52434CCD2729D540003C73AC /* LoginViewController.h */,
 				52434CCE2729D540003C73AC /* LoginViewController.m */,
+				52AFE4A12748B7DD00573F90 /* Table View Cells */,
+				52E817532748D3360091BBC2 /* VisitorCoursesViewController.h */,
+				52E817542748D3360091BBC2 /* VisitorCoursesViewController.m */,
 			);
 			path = GradSchoolZero;
 			sourceTree = "<group>";
@@ -82,6 +93,16 @@
 				52434CC12729D3DA003C73AC /* LaunchScreen.storyboard */,
 			);
 			path = StartupFiles;
+			sourceTree = "<group>";
+		};
+		52AFE4A12748B7DD00573F90 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52AFE49C2748B7CA00573F90 /* CourseCell.h */,
+				52AFE49D2748B7CA00573F90 /* CourseCell.m */,
+				52AFE49E2748B7CA00573F90 /* CourseCell.xib */,
+			);
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AFE4A02748B7CA00573F90 /* CourseCell.xib in Resources */,
 				52434CC32729D3DA003C73AC /* LaunchScreen.storyboard in Resources */,
 				52434CC02729D3DA003C73AC /* Assets.xcassets in Resources */,
 				52434CBE2729D3D7003C73AC /* Main.storyboard in Resources */,
@@ -155,8 +177,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52434CCF2729D540003C73AC /* LoginViewController.m in Sources */,
+				52AFE49F2748B7CA00573F90 /* CourseCell.m in Sources */,
 				52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */,
 				52434CC62729D3DA003C73AC /* main.m in Sources */,
+				52E817552748D3360091BBC2 /* VisitorCoursesViewController.m in Sources */,
 				52434CB82729D3D7003C73AC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
