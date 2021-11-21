@@ -16,42 +16,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="624" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t8-Uh-6Hy">
-                        <rect key="frame" x="20" y="20" width="46.5" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t8-Uh-6Hy">
+                        <rect key="frame" x="20" y="20" width="94" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EX-NEg">
-                        <rect key="frame" x="20" y="55.5" width="73" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EX-NEg">
+                        <rect key="frame" x="20" y="56" width="122" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Count / Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-sP-hOL">
-                        <rect key="frame" x="20" y="86.5" width="191" height="21"/>
+                        <rect key="frame" x="20" y="87" width="191" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-Pg-wJv">
-                        <rect key="frame" x="514" y="96.5" width="90" height="31"/>
+                        <rect key="frame" x="514" y="97" width="90" height="31"/>
                         <buttonConfiguration key="configuration" style="filled" title="Join Class"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGB-se-l5d">
+                        <rect key="frame" x="566" y="20" width="38" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6t8-Uh-6Hy" secondAttribute="trailing" constant="20" id="2Y6-vC-jUa"/>
                     <constraint firstItem="gCD-sP-hOL" firstAttribute="leading" secondItem="v3T-EX-NEg" secondAttribute="leading" id="56K-ZA-qLn"/>
+                    <constraint firstItem="IGB-se-l5d" firstAttribute="centerY" secondItem="6t8-Uh-6Hy" secondAttribute="centerY" id="8qC-Hb-TO9"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="gCD-sP-hOL" secondAttribute="trailing" constant="20" id="8z4-Tp-pnL"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="v3T-EX-NEg" secondAttribute="trailing" constant="20" id="BKS-Uo-kTx"/>
                     <constraint firstItem="v3T-EX-NEg" firstAttribute="top" secondItem="6t8-Uh-6Hy" secondAttribute="bottom" constant="15" id="G4N-BY-fcw"/>
                     <constraint firstItem="AnD-Pg-wJv" firstAttribute="top" secondItem="gCD-sP-hOL" secondAttribute="top" constant="10" id="J0X-h9-ivl"/>
                     <constraint firstItem="v3T-EX-NEg" firstAttribute="leading" secondItem="6t8-Uh-6Hy" secondAttribute="leading" id="V8t-an-n5F"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="AnD-Pg-wJv" secondAttribute="bottom" constant="10" id="VJB-g6-hq1"/>
+                    <constraint firstItem="IGB-se-l5d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6t8-Uh-6Hy" secondAttribute="trailing" constant="10" id="WEi-QN-G7I"/>
                     <constraint firstAttribute="trailing" secondItem="AnD-Pg-wJv" secondAttribute="trailing" constant="20" id="bEx-Tp-oLQ"/>
                     <constraint firstItem="gCD-sP-hOL" firstAttribute="top" secondItem="v3T-EX-NEg" secondAttribute="bottom" constant="10" id="cDP-wF-rSf"/>
                     <constraint firstItem="6t8-Uh-6Hy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="iH1-JF-Khu"/>
                     <constraint firstItem="6t8-Uh-6Hy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="jua-Oa-S0L"/>
+                    <constraint firstAttribute="trailing" secondItem="IGB-se-l5d" secondAttribute="trailing" constant="20" id="zxY-JD-uge"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
