@@ -133,7 +133,7 @@
         <!--Courses-->
         <scene sceneID="e63-KI-r9g">
             <objects>
-                <viewController title="Courses" id="RF2-G6-ct6" sceneMemberID="viewController">
+                <viewController title="Courses" id="RF2-G6-ct6" customClass="VisitorCoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3r7-Is-NOb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Courses" id="96c-97-poN"/>
                     <navigationItem key="navigationItem" id="5cT-YP-87v"/>
+                    <connections>
+                        <outlet property="coursesTableView" destination="L02-5c-BBM" id="YuC-0F-NfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQW-Lw-NYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +165,7 @@
         <!--Students-->
         <scene sceneID="pce-yV-WFA">
             <objects>
-                <viewController title="Students" id="HVN-Z2-5wI" sceneMemberID="viewController">
+                <viewController title="Students" id="HVN-Z2-5wI" customClass="VisitorStudentsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AK0-1y-UuD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,6 +185,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Students" id="iMW-9e-8Xh"/>
+                    <connections>
+                        <outlet property="studentsTableView" destination="NJC-qh-hfK" id="geg-lK-9l3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bni-ZC-MF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
