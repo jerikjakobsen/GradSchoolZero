@@ -61,7 +61,7 @@
                 <outlet property="professorNameLabel" destination="v3T-EX-NEg" id="VBU-Dh-ywk"/>
                 <outlet property="studentCountLabel" destination="gCD-sP-hOL" id="n9R-a6-Kp8"/>
             </connections>
-            <point key="canvasLocation" x="337.68115942028987" y="160.71428571428569"/>
+            <point key="canvasLocation" x="364" y="133"/>
         </tableViewCell>
     </objects>
 </document>
