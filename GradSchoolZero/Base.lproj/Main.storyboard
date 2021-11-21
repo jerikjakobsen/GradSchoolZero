@@ -165,7 +165,7 @@
         <!--Students-->
         <scene sceneID="pce-yV-WFA">
             <objects>
-                <viewController title="Students" id="HVN-Z2-5wI" sceneMemberID="viewController">
+                <viewController title="Students" id="HVN-Z2-5wI" customClass="VisitorStudentsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AK0-1y-UuD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,6 +185,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Students" id="iMW-9e-8Xh"/>
+                    <connections>
+                        <outlet property="studentsTableView" destination="NJC-qh-hfK" id="496-bD-waJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bni-ZC-MF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

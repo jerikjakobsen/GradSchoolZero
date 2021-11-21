@@ -6,7 +6,8 @@
 //
 
 #import "VisitorCoursesViewController.h"
-#import "Table View Cells/CourseCell.h"
+#import "../Table View Cells/CourseCell.h"
+#import "User.h"
 
 @interface VisitorCoursesViewController () <UITableViewDelegate, UITableViewDataSource>
 
