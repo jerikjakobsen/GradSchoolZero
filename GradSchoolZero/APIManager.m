@@ -18,8 +18,10 @@
 }
 
 + (NSURL *) buildURL: (NSDictionary *) params endpoint: (NSString *) endpoint {
-    NSURL* url = [[NSURL alloc] initWithString: [NSString stringWithFormat: @"http://localhost:3000/%@%@", endpoint, [self addParams: params]]];
-    NSLog(@"%@", url);
+    NSString *urlString = [NSString stringWithFormat: @"http://localhost:3000/%@%@", endpoint, [self addParams: params]];
+    NSString *urlStringReplacedSpaces = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSURL* url = [[NSURL alloc] initWithString:  urlStringReplacedSpaces];
+    
     return url;
 }
 

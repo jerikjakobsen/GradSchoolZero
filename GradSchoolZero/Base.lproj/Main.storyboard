@@ -76,55 +76,203 @@
             </objects>
             <point key="canvasLocation" x="962" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Apply As Student View Controller-->
         <scene sceneID="pbC-wx-Nr8">
             <objects>
-                <viewController id="dEG-Ne-hcr" sceneMemberID="viewController">
+                <viewController id="dEG-Ne-hcr" customClass="ApplyAsStudentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pmX-kU-kGA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGB-Bv-dDh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGB-Bv-dDh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Apply as Student" id="Pim-0C-lOT">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ss5-TT-LI3"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="t27-8W-gRl"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ss5-TT-LI3">
+                                            <connections>
+                                                <action selector="didCancel:" destination="dEG-Ne-hcr" id="kCo-H2-kSJ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rIM-kF-thq">
+                                <rect key="frame" x="66.5" y="156" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-fE-yWW">
+                                <rect key="frame" x="66.5" y="220" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCQ-sa-FJH">
+                                <rect key="frame" x="66.5" y="284" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Program Applying For" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3W-XR-dGF">
+                                <rect key="frame" x="66.5" y="348" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GPA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEi-do-IEN">
+                                <rect key="frame" x="66.5" y="412" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Graduation Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HoR-Qi-jBr">
+                                <rect key="frame" x="66.5" y="476" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJM-zm-XEu">
+                                <rect key="frame" x="176.5" y="702" width="61" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Apply"/>
+                                <connections>
+                                    <action selector="apply:" destination="dEG-Ne-hcr" eventType="touchUpInside" id="Zgt-6F-75L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mDQ-42-js0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HoR-Qi-jBr" firstAttribute="width" secondItem="rIM-kF-thq" secondAttribute="width" id="2zn-KF-0Ff"/>
+                            <constraint firstItem="zEi-do-IEN" firstAttribute="width" secondItem="rIM-kF-thq" secondAttribute="width" id="46U-wV-wYs"/>
+                            <constraint firstItem="p3W-XR-dGF" firstAttribute="width" secondItem="rIM-kF-thq" secondAttribute="width" id="736-R9-wCP"/>
+                            <constraint firstItem="zEi-do-IEN" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="EaL-cY-DoZ"/>
+                            <constraint firstItem="v9T-fE-yWW" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="MTc-2p-O8H"/>
+                            <constraint firstItem="rIM-kF-thq" firstAttribute="width" secondItem="pmX-kU-kGA" secondAttribute="height" multiplier="1:3" id="PEG-WO-dbi"/>
+                            <constraint firstItem="DGB-Bv-dDh" firstAttribute="top" secondItem="mDQ-42-js0" secondAttribute="top" id="PcD-vD-YEl"/>
+                            <constraint firstItem="DGB-Bv-dDh" firstAttribute="leading" secondItem="mDQ-42-js0" secondAttribute="leading" id="Q85-17-cHi"/>
+                            <constraint firstItem="p3W-XR-dGF" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="U2b-sn-0fl"/>
+                            <constraint firstItem="v9T-fE-yWW" firstAttribute="width" secondItem="rIM-kF-thq" secondAttribute="width" id="YZy-m7-YUR"/>
+                            <constraint firstItem="p3W-XR-dGF" firstAttribute="top" secondItem="rCQ-sa-FJH" secondAttribute="bottom" constant="30" id="a0a-jO-Vn4"/>
+                            <constraint firstItem="mDQ-42-js0" firstAttribute="bottom" secondItem="nJM-zm-XEu" secondAttribute="bottom" constant="75" id="buY-lV-Ete"/>
+                            <constraint firstItem="HoR-Qi-jBr" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="ck0-NN-m0w"/>
+                            <constraint firstItem="nJM-zm-XEu" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="dDl-wr-eKn"/>
+                            <constraint firstItem="rCQ-sa-FJH" firstAttribute="top" secondItem="v9T-fE-yWW" secondAttribute="bottom" constant="30" id="gHZ-FN-18x"/>
+                            <constraint firstItem="rCQ-sa-FJH" firstAttribute="width" secondItem="rIM-kF-thq" secondAttribute="width" id="gxt-9j-52o"/>
+                            <constraint firstItem="DGB-Bv-dDh" firstAttribute="trailing" secondItem="mDQ-42-js0" secondAttribute="trailing" id="lFe-1J-Llb"/>
+                            <constraint firstItem="rCQ-sa-FJH" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="nCf-8f-KeZ"/>
+                            <constraint firstItem="nJM-zm-XEu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HoR-Qi-jBr" secondAttribute="bottom" constant="20" id="pPX-eg-432"/>
+                            <constraint firstItem="zEi-do-IEN" firstAttribute="top" secondItem="p3W-XR-dGF" secondAttribute="bottom" constant="30" id="q64-ms-zlW"/>
+                            <constraint firstItem="rIM-kF-thq" firstAttribute="centerX" secondItem="pmX-kU-kGA" secondAttribute="centerX" id="sYX-xT-8rf"/>
+                            <constraint firstItem="HoR-Qi-jBr" firstAttribute="top" secondItem="zEi-do-IEN" secondAttribute="bottom" constant="30" id="tfP-sZ-RYq"/>
+                            <constraint firstItem="rIM-kF-thq" firstAttribute="top" secondItem="DGB-Bv-dDh" secondAttribute="bottom" constant="100" id="ugF-Iy-cAT"/>
+                            <constraint firstItem="v9T-fE-yWW" firstAttribute="top" secondItem="rIM-kF-thq" secondAttribute="bottom" constant="30" id="xbm-NR-xGI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="GPAField" destination="zEi-do-IEN" id="kXb-Kp-G29"/>
+                        <outlet property="emailField" destination="rCQ-sa-FJH" id="ddd-BK-BcO"/>
+                        <outlet property="firstNameField" destination="rIM-kF-thq" id="ivh-Pm-UGV"/>
+                        <outlet property="gradYearField" destination="HoR-Qi-jBr" id="cYd-vp-fF4"/>
+                        <outlet property="lastNameField" destination="v9T-fE-yWW" id="Gbo-WK-uul"/>
+                        <outlet property="programField" destination="p3W-XR-dGF" id="zBc-8u-fjg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrb-uM-tkj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="-638"/>
+            <point key="canvasLocation" x="1392.753623188406" y="-638.16964285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Apply As Instructor View Controller-->
         <scene sceneID="kZW-Sz-hvY">
             <objects>
-                <viewController id="Ebw-ud-tcZ" sceneMemberID="viewController">
+                <viewController id="Ebw-ud-tcZ" customClass="ApplyAsInstructorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Epj-MJ-47d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngw-Xj-siz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngw-Xj-siz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="Apply as Instructor" id="sje-fX-Jht">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="hD8-PD-lU3"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="f2k-MF-J9u"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="hD8-PD-lU3">
+                                            <connections>
+                                                <action selector="didCancel:" destination="Ebw-ud-tcZ" id="ucS-zp-z1K"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQT-uu-DxG">
+                                <rect key="frame" x="66.5" y="156" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7T-BS-V8e">
+                                <rect key="frame" x="66.5" y="220" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3a-bH-KrC">
+                                <rect key="frame" x="66.5" y="284" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Program  to Teach" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuS-Dj-MlX">
+                                <rect key="frame" x="66.5" y="348" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Years of Experience" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGZ-BU-Fv5">
+                                <rect key="frame" x="66.5" y="412" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Graduation Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-by-O8f">
+                                <rect key="frame" x="66.5" y="476" width="281" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-eo-ceS">
+                                <rect key="frame" x="176.5" y="702" width="61" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Apply"/>
+                                <connections>
+                                    <action selector="didApply:" destination="Ebw-ud-tcZ" eventType="touchUpInside" id="sWp-xc-w6I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UoJ-60-0m8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AQT-uu-DxG" firstAttribute="top" secondItem="Ngw-Xj-siz" secondAttribute="bottom" constant="100" id="0yI-cc-wsK"/>
+                            <constraint firstItem="xGZ-BU-Fv5" firstAttribute="width" secondItem="AQT-uu-DxG" secondAttribute="width" id="1vi-Ol-iRc"/>
+                            <constraint firstItem="AQT-uu-DxG" firstAttribute="width" secondItem="Epj-MJ-47d" secondAttribute="height" multiplier="1:3" id="2lq-Y8-Zx1"/>
+                            <constraint firstItem="eHf-eo-ceS" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="3Sv-Pv-sZ0"/>
+                            <constraint firstItem="H7T-BS-V8e" firstAttribute="width" secondItem="AQT-uu-DxG" secondAttribute="width" id="6JS-3t-zVK"/>
+                            <constraint firstItem="AQT-uu-DxG" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="B44-VJ-BL3"/>
+                            <constraint firstItem="H7T-BS-V8e" firstAttribute="top" secondItem="AQT-uu-DxG" secondAttribute="bottom" constant="30" id="GfB-b0-IJp"/>
+                            <constraint firstItem="Sf3-by-O8f" firstAttribute="width" secondItem="AQT-uu-DxG" secondAttribute="width" id="I1b-Ne-D6p"/>
+                            <constraint firstItem="c3a-bH-KrC" firstAttribute="top" secondItem="H7T-BS-V8e" secondAttribute="bottom" constant="30" id="IdG-aL-fGC"/>
+                            <constraint firstItem="c3a-bH-KrC" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="LbG-WI-Y6U"/>
+                            <constraint firstItem="vuS-Dj-MlX" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="Osh-zW-TfV"/>
+                            <constraint firstItem="c3a-bH-KrC" firstAttribute="width" secondItem="AQT-uu-DxG" secondAttribute="width" id="QFf-nD-3g8"/>
+                            <constraint firstItem="Ngw-Xj-siz" firstAttribute="top" secondItem="UoJ-60-0m8" secondAttribute="top" id="VCi-xM-TRv"/>
+                            <constraint firstItem="vuS-Dj-MlX" firstAttribute="width" secondItem="AQT-uu-DxG" secondAttribute="width" id="ZZh-4y-AnT"/>
+                            <constraint firstItem="vuS-Dj-MlX" firstAttribute="top" secondItem="c3a-bH-KrC" secondAttribute="bottom" constant="30" id="ZZl-Aq-2IV"/>
+                            <constraint firstItem="eHf-eo-ceS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Sf3-by-O8f" secondAttribute="bottom" constant="20" id="erF-ZE-3Cg"/>
+                            <constraint firstItem="H7T-BS-V8e" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="fFS-5u-XBX"/>
+                            <constraint firstItem="Ngw-Xj-siz" firstAttribute="trailing" secondItem="UoJ-60-0m8" secondAttribute="trailing" id="fZh-58-1pS"/>
+                            <constraint firstItem="UoJ-60-0m8" firstAttribute="bottom" secondItem="eHf-eo-ceS" secondAttribute="bottom" constant="75" id="gFN-07-fcb"/>
+                            <constraint firstItem="Sf3-by-O8f" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="mAP-0M-gU7"/>
+                            <constraint firstItem="xGZ-BU-Fv5" firstAttribute="top" secondItem="vuS-Dj-MlX" secondAttribute="bottom" constant="30" id="nQP-SN-GAD"/>
+                            <constraint firstItem="Ngw-Xj-siz" firstAttribute="leading" secondItem="UoJ-60-0m8" secondAttribute="leading" id="qKt-eY-0Di"/>
+                            <constraint firstItem="Sf3-by-O8f" firstAttribute="top" secondItem="xGZ-BU-Fv5" secondAttribute="bottom" constant="30" id="tqV-v6-9RF"/>
+                            <constraint firstItem="xGZ-BU-Fv5" firstAttribute="centerX" secondItem="Epj-MJ-47d" secondAttribute="centerX" id="uOe-1h-LBI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="c3a-bH-KrC" id="m0q-N3-Sqw"/>
+                        <outlet property="firstNameField" destination="AQT-uu-DxG" id="b1T-HQ-Ugf"/>
+                        <outlet property="gradYearField" destination="Sf3-by-O8f" id="df8-BL-dRc"/>
+                        <outlet property="lastNameField" destination="H7T-BS-V8e" id="9fv-aC-C6V"/>
+                        <outlet property="programField" destination="vuS-Dj-MlX" id="UEu-bR-pNK"/>
+                        <outlet property="yoeField" destination="xGZ-BU-Fv5" id="PPV-gb-8ow"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2J-u9-Bfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

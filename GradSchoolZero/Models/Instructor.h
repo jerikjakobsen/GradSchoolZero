@@ -14,11 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 //Need to add more
 
 //Add more details to applyAsInstructor
-+ (void) applyAsInstructor;
++ (void) applyAsInstructor: (NSString *) firstname lastname: (NSString *) lastname email: (NSString *) email yoe: (NSString *) yoe program: (NSString *) program gradYear: (NSString *) gradYear;
 
 + (void) getAllInstructors: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
-
-
 
 @end
 

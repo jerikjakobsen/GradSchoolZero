@@ -24,6 +24,8 @@
 		52E8175F2749C10A0091BBC2 /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E8175D2749C10A0091BBC2 /* StudentCell.m */; };
 		52E817602749C10A0091BBC2 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E8175E2749C10A0091BBC2 /* StudentCell.xib */; };
 		52E817632749C5330091BBC2 /* VisitorStudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E817622749C5330091BBC2 /* VisitorStudentsViewController.m */; };
+		52F2C0242757182000072AED /* ApplyAsStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C0232757182000072AED /* ApplyAsStudentViewController.m */; };
+		52F2C0272757185900072AED /* ApplyAsInstructorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C0262757185900072AED /* ApplyAsInstructorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		52E8175E2749C10A0091BBC2 /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		52E817612749C5330091BBC2 /* VisitorStudentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitorStudentsViewController.h; sourceTree = "<group>"; };
 		52E817622749C5330091BBC2 /* VisitorStudentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitorStudentsViewController.m; sourceTree = "<group>"; };
+		52F2C0222757181F00072AED /* ApplyAsStudentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplyAsStudentViewController.h; sourceTree = "<group>"; };
+		52F2C0232757182000072AED /* ApplyAsStudentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplyAsStudentViewController.m; sourceTree = "<group>"; };
+		52F2C0252757185900072AED /* ApplyAsInstructorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplyAsInstructorViewController.h; sourceTree = "<group>"; };
+		52F2C0262757185900072AED /* ApplyAsInstructorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplyAsInstructorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,10 @@
 				52E817542748D3360091BBC2 /* VisitorCoursesViewController.m */,
 				52E817612749C5330091BBC2 /* VisitorStudentsViewController.h */,
 				52E817622749C5330091BBC2 /* VisitorStudentsViewController.m */,
+				52F2C0222757181F00072AED /* ApplyAsStudentViewController.h */,
+				52F2C0232757182000072AED /* ApplyAsStudentViewController.m */,
+				52F2C0252757185900072AED /* ApplyAsInstructorViewController.h */,
+				52F2C0262757185900072AED /* ApplyAsInstructorViewController.m */,
 			);
 			path = VisitorViewControllers;
 			sourceTree = "<group>";
@@ -234,7 +244,9 @@
 				52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */,
 				52434CC62729D3DA003C73AC /* main.m in Sources */,
 				52E817552748D3360091BBC2 /* VisitorCoursesViewController.m in Sources */,
+				52F2C0242757182000072AED /* ApplyAsStudentViewController.m in Sources */,
 				52E15C082755E711008B9D5A /* APIManager.m in Sources */,
+				52F2C0272757185900072AED /* ApplyAsInstructorViewController.m in Sources */,
 				52E1F7072749D5FE0058AE44 /* Student.m in Sources */,
 				52434CB82729D3D7003C73AC /* SceneDelegate.m in Sources */,
 				52E8175F2749C10A0091BBC2 /* StudentCell.m in Sources */,
