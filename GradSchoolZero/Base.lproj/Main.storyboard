@@ -38,6 +38,9 @@
                                 <rect key="frame" x="177.5" y="565" width="59.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                <connections>
+                                    <action selector="didLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C05-xh-dau"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIX-V0-j0D">
                                 <rect key="frame" x="144" y="781" width="126" height="31"/>
@@ -69,6 +72,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Wh-g4-qxG"/>
                     <connections>
+                        <outlet property="emailField" destination="toO-W4-jlt" id="duQ-uk-mK5"/>
+                        <outlet property="passwordField" destination="qN4-5O-KLq" id="7GQ-Dd-xVQ"/>
+                        <outlet property="userTypeSegment" destination="sqv-sH-3MX" id="ZPz-Jc-fbl"/>
                         <segue destination="98R-o7-yUl" kind="show" id="kyw-87-ipk"/>
                     </connections>
                 </viewController>

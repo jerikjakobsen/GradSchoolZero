@@ -10,6 +10,9 @@
 #import "APIManager.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *userTypeSegment;
 
 @end
 
@@ -19,9 +22,12 @@
     [super viewDidLoad];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [User sharedUser].userID = @"1234";
-    [User sharedUser].userType = @"Student";
+- (IBAction)didLogin:(id)sender {
+    NSArray *types = @[@"student", @"instructor", @"registrar"];
+    [User login: types[[self.userTypeSegment selectedSegmentIndex]] email:@"jerikjakobsen@gmail.com" password:@"1234" completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID) {
+            // Do proper transitions based on the user type and period
+        NSLog(@"id:%@", userID);
+    }];
 }
 
 @end

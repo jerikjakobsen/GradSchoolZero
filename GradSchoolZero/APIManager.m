@@ -40,6 +40,25 @@
     
 }
 
++ (void) POSTWithRecieving: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSInteger code, NSDictionary *res)) completion {
+    NSMutableURLRequest *req = [[NSMutableURLRequest alloc] init];
+    [req setHTTPMethod: @"POST"];
+    [req setURL: [self buildURL:params endpoint:endpoint]];
+
+    [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"%@", error.localizedDescription);
+            }
+            NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+            NSError *jsonError = nil;
+        NSDictionary *json = nil;
+        if (data != nil) {
+            json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        }
+            completion(error != nil, error, statusCode, json);
+        }] resume] ;
+}
+
 + (void) GET: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSArray *, NSInteger code)) completion {
     NSMutableURLRequest *req = [[NSMutableURLRequest alloc] init];
     [req setHTTPMethod: @"POST"];

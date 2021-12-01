@@ -13,8 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (User *) sharedUser;
 
++ (void) login: (NSString *) type email: (NSString *) email password: (NSString *) password completion: (void (^)(bool authenticated, NSError * error, NSString * period, NSString *userID)) completion;
+
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *userType;
+@property (nonatomic, strong) NSString *period;
+
 
 @end
 

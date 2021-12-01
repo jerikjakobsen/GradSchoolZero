@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) POST: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSInteger code)) completion;
 
++ (void) POSTWithRecieving: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSInteger code, NSDictionary *res)) completion;
+
 + (void) GET: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSArray *, NSInteger code)) completion;
 @end
 
