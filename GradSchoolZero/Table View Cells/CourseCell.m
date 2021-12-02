@@ -28,4 +28,8 @@
     self.timeLabel.text = time;
 }
 
+- (void) configureCell: (Course *) course {
+    [self configureCell:course.name professor:course.instructorName studentCount:course.studentCount capacityCount:course.capacity courseID:course.courseid time: [course getTimeDate]];
+}
+
 @end

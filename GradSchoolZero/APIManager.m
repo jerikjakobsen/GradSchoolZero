@@ -72,6 +72,7 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"%@", data);
             if (error != nil) {
                 NSLog(@"%@", error.localizedDescription);
             }

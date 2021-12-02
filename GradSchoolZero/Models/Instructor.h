@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Instructor : User
 
++ (Instructor *) sharedInstructor;
+
 //Need to add more
 
 //Add more details to applyAsInstructor

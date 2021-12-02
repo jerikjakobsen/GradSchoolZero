@@ -15,10 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *GPA;
 @property (nonatomic, strong) NSNumber *warnings;
 
++ (Student *) sharedStudent;
+
 // Add more details to applyAsStudent
 + (void) applyAsStudent: (NSString *) firstname lastname: (NSString *) lastname email: (NSString *) email gpa: (NSString *) gpa program: (NSString *) program gradYear: (NSString *) gradYear;
 
 + (void) getAllStudents: (void (^)(bool succeeded, NSError *, NSArray *)) completion;
+
++ (void) setSharedStudent: (NSString *) studentId;
 
 - (void) getAllClasses: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
 

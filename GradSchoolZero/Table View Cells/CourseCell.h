@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../Models/Course.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,8 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *joinClassButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) NSString *courseID;
+@property (strong, nonatomic) Course *course;
 
 - (void) configureCell: (NSString *) name professor: (NSString *) profName studentCount: (NSNumber *) count capacityCount: (NSNumber *) capacityCount courseID: (NSString *) courseID time: (NSString *) time;
+- (void) configureCell: (Course *) course;
 
 @end
 

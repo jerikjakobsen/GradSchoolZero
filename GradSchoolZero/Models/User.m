@@ -32,6 +32,7 @@ static User *_sharedUser = nil;
             [User sharedUser].userID = res[@"id"];
             [User sharedUser].userType = type;
             [User sharedUser].period = res[@"period"];
+            
             completion(res[@"auth"], nil, res[@"period"], res[@"id"]);
         }
     }];

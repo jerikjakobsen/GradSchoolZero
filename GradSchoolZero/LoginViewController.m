@@ -9,6 +9,8 @@
 #import "User.h"
 #import "APIManager.h"
 #import "Models/Course.h"
+#import "Models/Student.h"
+#import "Models/Instructor.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -26,9 +28,56 @@
 
 - (IBAction)didLogin:(id)sender {
     NSArray *types = @[@"student", @"instructor", @"registrar"];
-    [User login: types[[self.userTypeSegment selectedSegmentIndex]] email:@"jerikjakobsen@gmail.com" password:@"1234" completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID) {
-            // Do proper transitions based on the user type and period
-        NSLog(@"id:%@", userID);
+    NSString* userType = types[[self.userTypeSegment selectedSegmentIndex]];
+    [User login: userType email:@"jerikjakobsen@gmail.com" password:@"1234" completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID) {
+        NSLog(@"period");
+        if (authenticated) {
+            self.emailField.text = @"";
+            self.passwordField.text = @"";
+            if ([userType isEqualToString: @"student"]) {
+                [Student setSharedStudent: userID];
+                NSLog(@"%@", [Student sharedStudent]);
+                if ([period isEqualToString: @"pre-registration"]) {
+                    [self performSegueWithIdentifier:@"toStudent" sender: self];
+                } else if ([period isEqualToString: @"registration"] || [period isEqualToString: @"special-registration"]) {
+                    [self performSegueWithIdentifier:@"toStudent" sender: self];
+                } else if ([period isEqualToString: @"course-run"]) {
+                    [self performSegueWithIdentifier:@"toStudent" sender: self];
+                } else if ([period isEqualToString: @"review"]) {
+                    [self performSegueWithIdentifier:@"toStudent" sender: self];
+                } else if ([period isEqualToString:@"grading"]) {
+                    [self performSegueWithIdentifier:@"toStudent" sender: self];
+                }
+            } else if ([userType isEqualToString: @"instructor"]) {
+                if ([period isEqualToString: @"pre-registration"]) {
+                    
+                } else if ([period isEqualToString: @"registration"] || [period isEqualToString: @"special-registration"]) {
+                    
+                } else if ([period isEqualToString: @"course-run"]) {
+                    
+                } else if ([period isEqualToString: @"review"]) {
+                    
+                } else if ([period isEqualToString:@"grading"]) {
+                    
+                }
+            } else {
+                if ([period isEqualToString: @"pre-registration"]) {
+                    
+                } else if ([period isEqualToString: @"registration"] || [period isEqualToString: @"special-registration"]) {
+                    
+                } else if ([period isEqualToString: @"course-run"]) {
+                    
+                } else if ([period isEqualToString: @"review"]) {
+                    
+                } else if ([period isEqualToString:@"grading"]) {
+                    
+                }
+            }
+            
+            
+        } else {
+            
+        }
     }];
 }
 

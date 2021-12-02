@@ -76,11 +76,12 @@
                         <outlet property="passwordField" destination="qN4-5O-KLq" id="7GQ-Dd-xVQ"/>
                         <outlet property="userTypeSegment" destination="sqv-sH-3MX" id="ZPz-Jc-fbl"/>
                         <segue destination="98R-o7-yUl" kind="show" id="kyw-87-ipk"/>
+                        <segue destination="v25-O8-fTp" kind="show" identifier="toStudent" id="sTi-EV-UEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="98"/>
+            <point key="canvasLocation" x="928" y="98"/>
         </scene>
         <!--Apply As Student View Controller-->
         <scene sceneID="pbC-wx-Nr8">
@@ -400,69 +401,20 @@
         <!--Student login-->
         <scene sceneID="5bl-d8-uu2">
             <objects>
-                <viewController title="Register" id="bP0-Al-m1m" userLabel="Student login" sceneMemberID="viewController">
+                <viewController title="Register" id="bP0-Al-m1m" userLabel="Student login" customClass="StudentCoursesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nqW-eh-Y8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nht-zm-8gf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Previous classes" id="Dgv-PZ-7kO"/>
+                                    <navigationItem title="Courses" id="Dgv-PZ-7kO"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aRK-mS-8dI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="146" id="mRf-rj-Drf" userLabel="Courses View Cell">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="146"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mRf-rj-Drf" id="rsT-Ma-OSG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uts-v4-TCT">
-                                                    <rect key="frame" x="41" y="34" width="101" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gmV-gD-CYg">
-                                                    <rect key="frame" x="41" y="91" width="122" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MCl-5l-ATt">
-                                                    <rect key="frame" x="305" y="83" width="61" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="gray" title="Enroll"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jMD-RK-cDU">
-                                                    <rect key="frame" x="296" y="34" width="79" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Uts-v4-TCT" firstAttribute="leading" secondItem="rsT-Ma-OSG" secondAttribute="leadingMargin" constant="25" id="1Hs-ks-FKN"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MCl-5l-ATt" secondAttribute="bottom" constant="21" id="1Wd-Yi-B2q"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gmV-gD-CYg" secondAttribute="bottom" constant="23" id="4PJ-8c-RNn"/>
-                                                <constraint firstItem="gmV-gD-CYg" firstAttribute="leading" secondItem="rsT-Ma-OSG" secondAttribute="leadingMargin" constant="25" id="FiH-91-b5R"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="jMD-RK-cDU" secondAttribute="trailing" constant="25" id="Nop-sH-uf4"/>
-                                                <constraint firstItem="Uts-v4-TCT" firstAttribute="top" secondItem="rsT-Ma-OSG" secondAttribute="topMargin" constant="23" id="ZTz-PJ-Sbc"/>
-                                                <constraint firstItem="jMD-RK-cDU" firstAttribute="top" secondItem="rsT-Ma-OSG" secondAttribute="topMargin" constant="23" id="bSm-Iy-t7P"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="MCl-5l-ATt" secondAttribute="trailing" constant="40" id="n4d-aG-MnH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CMh-VI-ZoC"/>
@@ -479,6 +431,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Register" id="LhY-yG-Eyn"/>
+                    <connections>
+                        <outlet property="coursesTableView" destination="aRK-mS-8dI" id="irJ-YJ-JeW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cos-Wk-Nhy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,35 +442,31 @@
         <!--Profile-->
         <scene sceneID="qfy-qV-xXA">
             <objects>
-                <viewController title="Profile" id="pxH-xq-0LW" sceneMemberID="viewController">
+                <viewController title="Profile" id="pxH-xq-0LW" customClass="StudentProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8o-Cl-sWH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVb-yC-Nw7">
-                                <rect key="frame" x="30" y="143" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVb-yC-Nw7">
+                                <rect key="frame" x="129.5" y="187" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlL-qr-Nvu">
+                                <rect key="frame" x="190.5" y="243" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlL-qr-Nvu">
-                                <rect key="frame" x="69" y="190" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warnings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTW-cA-VzL">
+                                <rect key="frame" x="171" y="299" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warnings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTW-cA-VzL">
-                                <rect key="frame" x="49" y="246" width="72" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CQo-bj-Pb5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQo-bj-Pb5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Student Info" id="5ep-2C-HXH"/>
                                 </items>
@@ -523,8 +474,25 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nec-yI-I8Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vlL-qr-Nvu" firstAttribute="centerX" secondItem="c8o-Cl-sWH" secondAttribute="centerX" id="AEm-WZ-MGp"/>
+                            <constraint firstItem="NVb-yC-Nw7" firstAttribute="top" secondItem="CQo-bj-Pb5" secondAttribute="bottom" constant="55" id="Cb2-Lp-46p"/>
+                            <constraint firstItem="CQo-bj-Pb5" firstAttribute="leading" secondItem="Nec-yI-I8Q" secondAttribute="leading" id="DPS-q4-Pct"/>
+                            <constraint firstItem="vlL-qr-Nvu" firstAttribute="top" secondItem="NVb-yC-Nw7" secondAttribute="bottom" constant="26" id="F3u-qx-L6t"/>
+                            <constraint firstItem="CQo-bj-Pb5" firstAttribute="top" secondItem="Nec-yI-I8Q" secondAttribute="top" id="K6E-Cl-5jA"/>
+                            <constraint firstItem="Nec-yI-I8Q" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RTW-cA-VzL" secondAttribute="bottom" constant="20" id="Q7Y-1a-vCC"/>
+                            <constraint firstItem="RTW-cA-VzL" firstAttribute="centerX" secondItem="c8o-Cl-sWH" secondAttribute="centerX" id="hDG-gK-Ftl"/>
+                            <constraint firstItem="RTW-cA-VzL" firstAttribute="top" secondItem="vlL-qr-Nvu" secondAttribute="bottom" constant="35" id="iub-EX-DXn"/>
+                            <constraint firstItem="CQo-bj-Pb5" firstAttribute="trailing" secondItem="Nec-yI-I8Q" secondAttribute="trailing" id="vKz-RZ-sff"/>
+                            <constraint firstItem="NVb-yC-Nw7" firstAttribute="centerX" secondItem="c8o-Cl-sWH" secondAttribute="centerX" id="yAY-vG-Hje"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="4St-HW-2XY"/>
+                    <connections>
+                        <outlet property="studentGPALabel" destination="vlL-qr-Nvu" id="A2L-kX-15V"/>
+                        <outlet property="studentNameLabel" destination="NVb-yC-Nw7" id="g6S-i2-ayU"/>
+                        <outlet property="studentWarningsLabel" destination="RTW-cA-VzL" id="XCq-l9-MAx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XC-uk-2D7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -539,13 +507,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bb-ub-Ly2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Previous classes" id="bU9-N3-KIp"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5ZB-wj-AAE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="4ko-lv-gQf">
@@ -591,6 +559,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="v25-O8-fTp" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dmQ-4P-JBL"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3gh-Bc-UNM">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -616,13 +585,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-Rh-cl5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Previous classes" id="uRi-Cg-TOK"/>
+                                    <navigationItem title="Enrolled Courses" id="uRi-Cg-TOK"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3na-dc-cUx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="oW9-sc-D5J">
