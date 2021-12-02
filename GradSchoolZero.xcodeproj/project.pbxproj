@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5229105727583DFF00D97CC4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229105627583DFF00D97CC4 /* Course.m */; };
 		52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CB42729D3D7003C73AC /* AppDelegate.m */; };
 		52434CB82729D3D7003C73AC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CB72729D3D7003C73AC /* SceneDelegate.m */; };
 		52434CBE2729D3D7003C73AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52434CBC2729D3D7003C73AC /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5229105527583DFF00D97CC4 /* Course.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		5229105627583DFF00D97CC4 /* Course.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		52434CB02729D3D7003C73AC /* GradSchoolZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradSchoolZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52434CB32729D3D7003C73AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52434CB42729D3D7003C73AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				52E1F7062749D5FE0058AE44 /* Student.m */,
 				52E1F7092749D8FA0058AE44 /* Instructor.h */,
 				52E1F70A2749D8FA0058AE44 /* Instructor.m */,
+				5229105527583DFF00D97CC4 /* Course.h */,
+				5229105627583DFF00D97CC4 /* Course.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				52E817582749BA380091BBC2 /* User.m in Sources */,
 				52AFE49F2748B7CA00573F90 /* CourseCell.m in Sources */,
 				52E1F70B2749D8FA0058AE44 /* Instructor.m in Sources */,
+				5229105727583DFF00D97CC4 /* Course.m in Sources */,
 				52E817632749C5330091BBC2 /* VisitorStudentsViewController.m in Sources */,
 				52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */,
 				52434CC62729D3DA003C73AC /* main.m in Sources */,

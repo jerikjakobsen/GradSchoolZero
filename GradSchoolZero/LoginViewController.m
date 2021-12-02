@@ -8,6 +8,7 @@
 #import "LoginViewController.h"
 #import "User.h"
 #import "APIManager.h"
+#import "Models/Course.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -20,6 +21,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 - (IBAction)didLogin:(id)sender {

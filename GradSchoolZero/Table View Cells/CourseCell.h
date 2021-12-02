@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *professorNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *joinClassButton;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) NSString *courseID;
 
-- (void) configureCell: (NSString *) name professor: (NSString *) profName studentCount: (NSInteger *) count capacityCount: (NSInteger *) capacityCount courseID: (NSString *) courseID;
+- (void) configureCell: (NSString *) name professor: (NSString *) profName studentCount: (NSNumber *) count capacityCount: (NSNumber *) capacityCount courseID: (NSString *) courseID time: (NSString *) time;
 
 @end
 

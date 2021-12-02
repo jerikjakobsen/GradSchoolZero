@@ -7,11 +7,13 @@
 
 #import "VisitorCoursesViewController.h"
 #import "../Table View Cells/CourseCell.h"
-#import "User.h"
+#import "../Models/User.h"
+#import "../Models/Course.h"
 
 @interface VisitorCoursesViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *coursesTableView;
+@property (strong, nonatomic) NSArray *coursesArray;
 
 @end
 
@@ -23,20 +25,27 @@
     self.coursesTableView.dataSource = self;
     UINib *nib = [UINib nibWithNibName: @"CourseCell" bundle:nil];
     [self.coursesTableView registerNib: nib forCellReuseIdentifier: @"CourseCell"];
-    [self.coursesTableView reloadData];
+    [Course getCourses:^(NSError * _Nonnull error, NSArray * _Nonnull courses) {
+            if (error == nil) {
+                self.coursesArray = courses;
+                [self.coursesTableView reloadData];
+            }
+    }];
 }
 
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CourseCell *cell = [self.coursesTableView dequeueReusableCellWithIdentifier: @"CourseCell" forIndexPath:indexPath];
-    [cell configureCell:@"Programming Language Paradigms" professor:@"Douglas Troeger" studentCount:@(20) capacityCount:@(30) courseID:@"12343412"];
+    Course *course = self.coursesArray[indexPath.row];
+    
+    [cell configureCell: course.name professor:course.instructorName studentCount: course.studentCount capacityCount: course.capacity courseID: course.courseid time: [course getTimeDate]];
     [cell.joinClassButton setHidden: TRUE];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.coursesArray.count;
 }
 
 @end

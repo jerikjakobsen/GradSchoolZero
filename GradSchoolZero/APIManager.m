@@ -31,11 +31,14 @@
     [req setURL: [self buildURL:params endpoint:endpoint]];
 
     [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
             if (error != nil) {
                 NSLog(@"%@", error.localizedDescription);
             }
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             completion(error != nil, error, statusCode);
+        });
         }] resume] ;
     
 }
@@ -46,31 +49,40 @@
     [req setURL: [self buildURL:params endpoint:endpoint]];
 
     [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            
+        dispatch_async(dispatch_get_main_queue(), ^{
             if (error != nil) {
                 NSLog(@"%@", error.localizedDescription);
             }
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             NSError *jsonError = nil;
-        NSDictionary *json = nil;
-        if (data != nil) {
-            json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-        }
+            NSDictionary *json = nil;
+            if (data != nil) {
+                json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            }
             completion(error != nil, error, statusCode, json);
+        });
         }] resume] ;
 }
 
-+ (void) GET: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSArray *, NSInteger code)) completion {
++ (void) GET: (NSString *) endpoint parameters: (NSDictionary *) params completion: (void (^)(bool succeeded, NSError * error, NSDictionary *, NSInteger code)) completion {
     NSMutableURLRequest *req = [[NSMutableURLRequest alloc] init];
-    [req setHTTPMethod: @"POST"];
+    [req setHTTPMethod: @"GET"];
     [req setURL: [self buildURL: params endpoint: endpoint]];
     [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
+        dispatch_async(dispatch_get_main_queue(), ^{
             if (error != nil) {
                 NSLog(@"%@", error.localizedDescription);
             }
-            NSError *jsonError = nil;
-            NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-            completion(error != nil, error, jsonArray, statusCode);
+            NSError *jsonError = nil;
+            NSDictionary *json = nil;
+            if (data != nil) {
+                json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            }
+            completion(error != nil, error, json, statusCode);
+        });
         }] resume] ;
 }
 
