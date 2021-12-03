@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol CourseCellDelegate
+
+- (void) presentErrorMessage: (NSString *) message;
+
+@end
+
 @interface CourseCell : UITableViewCell
+
+@property (weak, nonatomic) id<CourseCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *professorNameLabel;

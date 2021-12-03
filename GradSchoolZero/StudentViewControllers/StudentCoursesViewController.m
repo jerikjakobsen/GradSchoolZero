@@ -9,7 +9,7 @@
 #import "../Models/Course.h"
 #import "../Table View Cells/CourseCell.h"
 
-@interface StudentCoursesViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface StudentCoursesViewController () <UITableViewDelegate, UITableViewDataSource, CourseCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *coursesTableView;
 @property (strong, nonatomic) NSArray *coursesArray;
 
@@ -26,6 +26,9 @@
     [Course getCourses:^(NSError * _Nonnull error, NSArray * _Nonnull courses) {
             if (error == nil) {
                 self.coursesArray = courses;
+                for (Course *c in courses) {
+                    NSLog(@"%@", c.courseid);
+                }
                 [self.coursesTableView reloadData];
             }
     }];
@@ -35,8 +38,8 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CourseCell *cell = [self.coursesTableView dequeueReusableCellWithIdentifier: @"CourseCell" forIndexPath:indexPath];
     Course *course = self.coursesArray[indexPath.row];
-    
-    [cell configureCell: course.name professor:course.instructorName studentCount: course.studentCount capacityCount: course.capacity courseID: course.courseid time: [course getTimeDate]];
+    cell.delegate = self;
+    [cell configureCell: course];
     [cell.joinClassButton setHidden: FALSE];
     return cell;
 }
@@ -45,5 +48,12 @@
     return self.coursesArray.count;
 }
 
+
+- (void)presentErrorMessage:(nonnull NSString *)message {
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction: action];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end

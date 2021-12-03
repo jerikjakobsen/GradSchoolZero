@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) applyForGraduation: (void (^)(bool succeeded, NSError * error)) completion;
 
-- (void) joinClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error)) completion;
+- (void) joinClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error, NSString * message)) completion;
 
 - (void) dropClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error)) completion;
 

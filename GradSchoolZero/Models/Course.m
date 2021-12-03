@@ -48,7 +48,8 @@
 
 - (instancetype) initWithJSON: (NSDictionary *) json {
     if (self = [super init]) {
-        self = [self initWithName:json[@"name"] courseID:json[@"courseid"] capacity:json[@"capacity"] studentCount:json[@"studentcount"] instructorid:json[@"instructorid"] instructorName: json[@"instructorname"] days:json[@"days"] startTime:json[@"starttime"] endTime:json[@"endtime"]];
+        NSLog(@"%@", json);
+        self = [self initWithName:json[@"name"] courseID:json[@"id"] capacity:json[@"capacity"] studentCount:json[@"studentcount"] instructorid:json[@"instructorid"] instructorName: json[@"instructorname"] days:json[@"days"] startTime:json[@"starttime"] endTime:json[@"endtime"]];
     }
     return self;
 }

@@ -43,4 +43,18 @@ static Student *_sharedStudent = nil;
     }];
 }
 
+- (void) joinClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error, NSString * message)) completion {
+    [APIManager POSTWithRecieving:@"enroll" parameters: @{@"studentid": self.userID, @"courseid": courseID} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code, NSDictionary * _Nonnull res) {
+        if (error != nil) {
+            NSLog(@"%@", error.localizedDescription);
+            completion(false, error, @"Something went Wrong");
+        } else {
+            if (code == 200) {
+                completion(true, nil, @"Success!");
+            } else {
+                completion(false, nil, res[@"msg"]);
+            }
+        }
+    }];
+}
 @end

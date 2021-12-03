@@ -6,6 +6,7 @@
 //
 
 #import "CourseCell.h"
+#import "../Models/Student.h"
 
 @implementation CourseCell
 
@@ -30,6 +31,21 @@
 
 - (void) configureCell: (Course *) course {
     [self configureCell:course.name professor:course.instructorName studentCount:course.studentCount capacityCount:course.capacity courseID:course.courseid time: [course getTimeDate]];
+    self.course = course;
+}
+
+- (IBAction)didTapJoinClass:(id)sender {
+    [[Student sharedStudent] joinClass: self.courseID completion:^(bool succeeded, NSError * _Nonnull error, NSString * _Nonnull message) {
+        if (succeeded) {
+            self.joinClassButton.titleLabel.text = @"Enrolled";
+            self.joinClassButton.enabled = FALSE;
+            self.course.studentCount = @([self.course.studentCount intValue] + 1);
+            self.studentCountLabel.text = [NSString stringWithFormat: @"%@/%@ Capacity", self.course.studentCount, self.course.capacity];
+
+        } else {
+            [self.delegate presentErrorMessage: message];
+        }
+    }];
 }
 
 @end
