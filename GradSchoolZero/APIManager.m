@@ -37,7 +37,7 @@
                 NSLog(@"%@", error.localizedDescription);
             }
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-            completion(error != nil, error, statusCode);
+            completion(error == nil, error, statusCode);
         });
         }] resume] ;
     
@@ -60,7 +60,7 @@
             if (data != nil) {
                 json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             }
-            completion(error != nil, error, statusCode, json);
+            completion(error == nil, error, statusCode, json);
         });
         }] resume] ;
 }
@@ -72,7 +72,7 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"%@", data);
+            NSLog(@"data: %@", data);
             if (error != nil) {
                 NSLog(@"%@", error.localizedDescription);
             }
@@ -82,7 +82,7 @@
             if (data != nil) {
                 json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
             }
-            completion(error != nil, error, json, statusCode);
+            completion(error == nil, error, json, statusCode);
         });
         }] resume] ;
 }

@@ -14,7 +14,6 @@
     
     [APIManager GET:@"courses" parameters:@{} completion:^(bool succeeded, NSError * _Nonnull error, NSDictionary * _Nonnull data, NSInteger code) {
             NSMutableArray *courses = [[NSMutableArray alloc] init];
-        NSLog(@"%ld", code);
             if (error!= nil) {
                 NSLog(@"%@", error.localizedDescription);
             }

@@ -29,14 +29,13 @@
 - (IBAction)didLogin:(id)sender {
     NSArray *types = @[@"student", @"instructor", @"registrar"];
     NSString* userType = types[[self.userTypeSegment selectedSegmentIndex]];
-    [User login: userType email:@"jerikjakobsen@gmail.com" password:@"1234" completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID) {
+    [User login: userType email: self.emailField.text password: self.passwordField.text completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID) {
         NSLog(@"period");
         if (authenticated) {
             self.emailField.text = @"";
             self.passwordField.text = @"";
             if ([userType isEqualToString: @"student"]) {
                 [Student setSharedStudent: userID];
-                NSLog(@"%@", [Student sharedStudent]);
                 if ([period isEqualToString: @"pre-registration"]) {
                     [self performSegueWithIdentifier:@"toStudent" sender: self];
                 } else if ([period isEqualToString: @"registration"] || [period isEqualToString: @"special-registration"]) {

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../Models/Student.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gpaLabel;
+@property (strong, nonatomic) Student *student;
 
+- (void) configureCell: (Student *) student;
 - (void) configureCell: (NSString *) name gpa: (NSNumber *) gpa;
 
 @end

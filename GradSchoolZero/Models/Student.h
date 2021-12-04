@@ -24,9 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) setSharedStudent: (NSString *) studentId;
 
-- (void) getAllClasses: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
+- (instancetype) initWithJson: (NSDictionary *) json;
 
-- (void) getCurrentClasses: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
+- (void) getAvailableCourses: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
+
+- (void) getCompletedClasses: (void (^)(bool succeeded, NSError * error, NSDictionary *)) completion;
+
+- (void) getEnrolledCourses: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
 
 - (void) reportProfessor: (NSString *) profID reason: (NSString *) reason completion:(void (^)(bool succeeded, NSError * error)) completion;
 

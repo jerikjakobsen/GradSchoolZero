@@ -7,10 +7,12 @@
 
 #import "VisitorStudentsViewController.h"
 #import "../Table View Cells/StudentCell.h"
+#import "../Models/Student.h"
 
 @interface VisitorStudentsViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *studentsTableView;
+@property (strong, nonatomic) NSArray *studentArray;
 
 @end
 
@@ -22,6 +24,10 @@
     self.studentsTableView.dataSource = self;
     UINib *nib = [UINib nibWithNibName:@"StudentCell" bundle:nil];
     [self.studentsTableView registerNib:nib forCellReuseIdentifier:@"StudentCell"];
+    [Student getAllStudents:^(bool succeeded, NSError * _Nonnull error, NSArray * _Nonnull json) {
+        self.studentArray = json;
+        [self.studentsTableView reloadData];
+    }];
 }
 
 

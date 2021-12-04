@@ -29,11 +29,13 @@ static User *_sharedUser = nil;
             NSLog(@"Error: %@", error.localizedDescription);
             completion(false, error, nil, nil);
         } else {
-            [User sharedUser].userID = res[@"id"];
-            [User sharedUser].userType = type;
-            [User sharedUser].period = res[@"period"];
-            
-            completion(res[@"auth"], nil, res[@"period"], res[@"id"]);
+            if ([res[@"auth"] isEqualToString: @"true"]) {
+                [User sharedUser].userID = res[@"id"];
+                [User sharedUser].userType = type;
+                [User sharedUser].period = res[@"period"];
+                completion(res[@"auth"], nil, res[@"period"], res[@"id"]);
+            }
+            completion(false, nil,@"", @"");
         }
     }];
 }

@@ -25,4 +25,8 @@
     self.gpaLabel.text = [NSString stringWithFormat: @"GPA %@/4.0", gpa];
 }
 
+- (void) configureCell: (Student *) student {
+    [self configureCell: student.name gpa: student.GPA];
+}
+
 @end
