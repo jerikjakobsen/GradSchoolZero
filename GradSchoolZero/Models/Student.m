@@ -72,8 +72,9 @@ static Student *_sharedStudent = nil;
                 [courses addObject:  [[Course alloc] initWithJSON: course]];
             }
             completion(true, error, courses);
+        } else {
+            completion(false, error, nil);
         }
-        completion(false, error, nil);
     }];
 }
 
@@ -86,8 +87,9 @@ static Student *_sharedStudent = nil;
             }
             NSDictionary *dict = @{@"classes": json[@"classes"], @"courses": courses};
             completion(true, error, dict);
+        } else {
+            completion(false, error, nil);
         }
-        completion(false, error, nil);
     }];
 }
 
@@ -99,8 +101,9 @@ static Student *_sharedStudent = nil;
                 [courses addObject:  [[Course alloc] initWithJSON: course]];
             }
             completion(true, error, courses);
+        } else {
+            completion(false, error, nil);
         }
-        completion(false, error, nil);
     }];
 }
 

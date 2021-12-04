@@ -33,13 +33,14 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     StudentCell *cell = [self.studentsTableView dequeueReusableCellWithIdentifier: @"StudentCell"];
-    [cell configureCell:@"John Jakobsen" gpa: @(3.8)];
+    Student *student = self.studentArray[indexPath.row];
+    [cell configureCell: student.name gpa: student.GPA];
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.studentArray.count;
 }
 
 
