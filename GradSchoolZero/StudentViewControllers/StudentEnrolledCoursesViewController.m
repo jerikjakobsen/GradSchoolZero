@@ -20,6 +20,10 @@
 
 @implementation StudentEnrolledCoursesViewController
 
+- (void) viewDidAppear:(BOOL)animated {
+    [self.coursesTableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.coursesTableView.delegate = self;
@@ -41,26 +45,33 @@
     Course *course = self.coursesArray[indexPath.row];
     cell.delegate = self;
     [cell configureCell: course];
-    cell.joinClassButton.titleLabel.text = @"Drop Class";
-    [cell.joinClassButton setHidden: FALSE];
+    [cell.actionButton setHidden: FALSE];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.coursesArray.count;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)presentErrorMessage:(nonnull NSString *)message {
-    // DO something here (For drop class? )
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction: action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
+- (void)buttonAction:(nonnull NSString *)courseID completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
+    // run drop class route
+}
+//
+//- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    ((CourseCell *) cell).actionButton.titleLabel.text = [self buttonMessage];
+//}
+
+- (nonnull NSString *)buttonMessage {
+    return @"Drop";
+}
+
+
 
 @end

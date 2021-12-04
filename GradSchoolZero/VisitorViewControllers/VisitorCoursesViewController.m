@@ -40,7 +40,7 @@
     Course *course = self.coursesArray[indexPath.row];
     
     [cell configureCell:course];
-    [cell.joinClassButton setHidden: TRUE];
+    [cell.actionButton setHidden: TRUE];
     return cell;
 }
 

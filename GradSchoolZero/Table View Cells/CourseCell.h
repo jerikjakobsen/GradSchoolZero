@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CourseCellDelegate
 
 - (void) presentErrorMessage: (NSString *) message;
+- (NSString *) buttonMessage;
+- (void) buttonAction: (NSString *) courseID completion: (void (^)(NSString *message, bool succeeded)) completion;
 
 @end
 
@@ -23,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *professorNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *studentCountLabel;
-@property (weak, nonatomic) IBOutlet UIButton *joinClassButton;
+@property (weak, nonatomic) IBOutlet UIButton *actionButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) NSString *courseID;
 @property (strong, nonatomic) Course *course;

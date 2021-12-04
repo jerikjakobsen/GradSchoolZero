@@ -38,11 +38,17 @@
             int dayIndex = [[days substringWithRange: NSMakeRange(i, 1)] intValue];
             self.days = [self.days arrayByAddingObject: dayArray[dayIndex]];
         }
-        self.startTime = startTime;
-        self.endTime = endTime;
+        
+        self.startTime = [NSString stringWithFormat: @"%@:%@", [self properTimeString: [startTime substringToIndex: 2]], [self properTimeString: [startTime substringFromIndex: 2]]];
+        self.endTime = [NSString stringWithFormat: @"%@:%@", [self properTimeString: [endTime substringToIndex: 2]], [self properTimeString: [endTime substringFromIndex: 2]]];
         self.instructorName = instructorName;
     }
     return self;
+}
+
+- (NSString *) properTimeString: (NSString *) time {
+    if ([time intValue] == 0) return @"00";
+    else return [NSString stringWithFormat: @"%d", [time intValue]];
 }
 
 - (instancetype) initWithJSON: (NSDictionary *) json {

@@ -40,7 +40,7 @@
     Course *course = self.coursesArray[indexPath.row];
     cell.delegate = self;
     [cell configureCell: course];
-    [cell.joinClassButton setHidden: FALSE];
+    [cell.actionButton setHidden: FALSE];
     return cell;
 }
 
@@ -54,6 +54,20 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction: action];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)buttonAction:(nonnull NSString *)courseID completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
+    [[Student sharedStudent] joinClass: courseID completion:^(bool succeeded, NSError * _Nonnull error, NSString * _Nonnull message) {
+        completion(message, succeeded);
+    }];
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    ((CourseCell *) cell).actionButton.titleLabel.text = [self buttonMessage];
+}
+
+- (NSString *)buttonMessage {
+    return @"Join";
 }
 
 @end

@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -22,6 +23,7 @@
 }
 
 - (void) configureCell: (NSString *) name professor: (NSString *) profName studentCount: (NSNumber *) studentCount capacityCount: (NSNumber *) capacityCount courseID: (NSString *) courseID time: (NSString *) time {
+    self.actionButton.titleLabel.text = [self.delegate buttonMessage];
     self.nameLabel.text = name;
     self.professorNameLabel.text = profName;
     self.studentCountLabel.text = [NSString stringWithFormat: @"%@/%@ Capacity", studentCount, capacityCount];
@@ -34,13 +36,18 @@
     self.course = course;
 }
 
-- (IBAction)didTapJoinClass:(id)sender {
-    [[Student sharedStudent] joinClass: self.courseID completion:^(bool succeeded, NSError * _Nonnull error, NSString * _Nonnull message) {
+- (IBAction)didTapButton:(id)sender {
+    
+    [self.delegate buttonAction: self.courseID completion:^(NSString * _Nonnull message, bool succeeded) {
         if (succeeded) {
-            self.joinClassButton.titleLabel.text = @"Enrolled";
-            self.joinClassButton.enabled = FALSE;
-            self.course.studentCount = @([self.course.studentCount intValue] + 1);
-            self.studentCountLabel.text = [NSString stringWithFormat: @"%@/%@ Capacity", self.course.studentCount, self.course.capacity];
+            self.actionButton.enabled = FALSE;
+            if ([[self.delegate buttonMessage] isEqualToString: @"Drop"]) {
+                self.course.studentCount = @([self.course.studentCount intValue] - 1);
+                self.studentCountLabel.text = [NSString stringWithFormat: @"%@/%@ Capacity", self.course.studentCount, self.course.capacity];
+            } else {
+                self.course.studentCount = @([self.course.studentCount intValue] + 1);
+                self.studentCountLabel.text = [NSString stringWithFormat: @"%@/%@ Capacity", self.course.studentCount, self.course.capacity];
+            }
 
         } else {
             [self.delegate presentErrorMessage: message];

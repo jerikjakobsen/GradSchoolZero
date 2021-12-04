@@ -18,6 +18,8 @@
 		525BB1A227593FF10007E0E0 /* StudentCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BB1A127593FF10007E0E0 /* StudentCoursesViewController.m */; };
 		525BB1A527594EF10007E0E0 /* StudentProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BB1A427594EF10007E0E0 /* StudentProfileViewController.m */; };
 		525BB1A8275B4DC90007E0E0 /* StudentEnrolledCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BB1A7275B4DC90007E0E0 /* StudentEnrolledCoursesViewController.m */; };
+		525BB1AB275BFC490007E0E0 /* ClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BB1AA275BFC490007E0E0 /* ClassCell.m */; };
+		525BB1AE275BFF070007E0E0 /* StudentPreviousClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BB1AD275BFF070007E0E0 /* StudentPreviousClassesViewController.m */; };
 		52AFE49F2748B7CA00573F90 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AFE49D2748B7CA00573F90 /* CourseCell.m */; };
 		52AFE4A02748B7CA00573F90 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AFE49E2748B7CA00573F90 /* CourseCell.xib */; };
 		52E15C082755E711008B9D5A /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E15C072755E711008B9D5A /* APIManager.m */; };
@@ -53,6 +55,10 @@
 		525BB1A427594EF10007E0E0 /* StudentProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentProfileViewController.m; sourceTree = "<group>"; };
 		525BB1A6275B4DC90007E0E0 /* StudentEnrolledCoursesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentEnrolledCoursesViewController.h; sourceTree = "<group>"; };
 		525BB1A7275B4DC90007E0E0 /* StudentEnrolledCoursesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentEnrolledCoursesViewController.m; sourceTree = "<group>"; };
+		525BB1A9275BFC490007E0E0 /* ClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassCell.h; sourceTree = "<group>"; };
+		525BB1AA275BFC490007E0E0 /* ClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassCell.m; sourceTree = "<group>"; };
+		525BB1AC275BFF070007E0E0 /* StudentPreviousClassesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentPreviousClassesViewController.h; sourceTree = "<group>"; };
+		525BB1AD275BFF070007E0E0 /* StudentPreviousClassesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentPreviousClassesViewController.m; sourceTree = "<group>"; };
 		52AFE49C2748B7CA00573F90 /* CourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		52AFE49D2748B7CA00573F90 /* CourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
 		52AFE49E2748B7CA00573F90 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 				525BB1A427594EF10007E0E0 /* StudentProfileViewController.m */,
 				525BB1A6275B4DC90007E0E0 /* StudentEnrolledCoursesViewController.h */,
 				525BB1A7275B4DC90007E0E0 /* StudentEnrolledCoursesViewController.m */,
+				525BB1AC275BFF070007E0E0 /* StudentPreviousClassesViewController.h */,
+				525BB1AD275BFF070007E0E0 /* StudentPreviousClassesViewController.m */,
 			);
 			path = StudentViewControllers;
 			sourceTree = "<group>";
@@ -158,6 +166,8 @@
 				52E8175C2749C10A0091BBC2 /* StudentCell.h */,
 				52E8175D2749C10A0091BBC2 /* StudentCell.m */,
 				52E8175E2749C10A0091BBC2 /* StudentCell.xib */,
+				525BB1A9275BFC490007E0E0 /* ClassCell.h */,
+				525BB1AA275BFC490007E0E0 /* ClassCell.m */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -274,8 +284,10 @@
 				52E817632749C5330091BBC2 /* VisitorStudentsViewController.m in Sources */,
 				52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */,
 				52434CC62729D3DA003C73AC /* main.m in Sources */,
+				525BB1AE275BFF070007E0E0 /* StudentPreviousClassesViewController.m in Sources */,
 				52E817552748D3360091BBC2 /* VisitorCoursesViewController.m in Sources */,
 				52F2C0242757182000072AED /* ApplyAsStudentViewController.m in Sources */,
+				525BB1AB275BFC490007E0E0 /* ClassCell.m in Sources */,
 				52E15C082755E711008B9D5A /* APIManager.m in Sources */,
 				525BB1A527594EF10007E0E0 /* StudentProfileViewController.m in Sources */,
 				52F2C0272757185900072AED /* ApplyAsInstructorViewController.m in Sources */,

@@ -501,7 +501,7 @@
         <!--Previous classes View Controller-->
         <scene sceneID="f0q-EX-3n0">
             <objects>
-                <viewController title="Previous Classes" id="r47-qW-b3y" userLabel="Previous classes View Controller" sceneMemberID="viewController">
+                <viewController title="Previous Classes" id="r47-qW-b3y" userLabel="Previous classes View Controller" customClass="StudentPreviousClassesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MdD-3Y-hA1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -516,22 +516,60 @@
                                 <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="4ko-lv-gQf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCell" rowHeight="147" id="4ko-lv-gQf" customClass="ClassCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ko-lv-gQf" id="Quw-Fw-mVb">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yul-M3-jKu">
-                                                    <rect key="frame" x="46" y="26" width="104" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yul-M3-jKu">
+                                                    <rect key="frame" x="40" y="31" width="104" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-W8-ADV">
+                                                    <rect key="frame" x="324.5" y="31" width="49.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVs-IN-R0G">
+                                                    <rect key="frame" x="40" y="106" width="73" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-RW-JGy">
+                                                    <rect key="frame" x="40" y="75" width="122" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="NVs-IN-R0G" secondAttribute="bottom" constant="20" id="2eb-xb-HPG"/>
+                                                <constraint firstItem="Yul-M3-jKu" firstAttribute="top" secondItem="Quw-Fw-mVb" secondAttribute="topMargin" constant="20" id="4GI-2W-plZ"/>
+                                                <constraint firstItem="TcD-RW-JGy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yul-M3-jKu" secondAttribute="bottom" constant="10" id="9m1-jS-w6p"/>
+                                                <constraint firstItem="NVs-IN-R0G" firstAttribute="leading" secondItem="TcD-RW-JGy" secondAttribute="leading" id="BTD-5M-zpN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fc1-W8-ADV" secondAttribute="trailing" constant="20" id="EL9-6d-uSu"/>
+                                                <constraint firstItem="NVs-IN-R0G" firstAttribute="top" secondItem="TcD-RW-JGy" secondAttribute="bottom" constant="10" id="JJF-K0-PAl"/>
+                                                <constraint firstItem="fc1-W8-ADV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yul-M3-jKu" secondAttribute="trailing" constant="10" id="NrS-Kq-jTs"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="NVs-IN-R0G" secondAttribute="trailing" constant="20" id="QD8-YY-qkl"/>
+                                                <constraint firstItem="TcD-RW-JGy" firstAttribute="leading" secondItem="Yul-M3-jKu" secondAttribute="leading" id="a0g-BG-hnT"/>
+                                                <constraint firstItem="fc1-W8-ADV" firstAttribute="top" secondItem="Quw-Fw-mVb" secondAttribute="topMargin" constant="20" id="i8U-Qf-z5S"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="TcD-RW-JGy" secondAttribute="trailing" constant="10" id="jLv-yA-oXc"/>
+                                                <constraint firstItem="Yul-M3-jKu" firstAttribute="leading" secondItem="Quw-Fw-mVb" secondAttribute="leadingMargin" constant="20" id="uQT-hv-qmr"/>
+                                                <constraint firstItem="fc1-W8-ADV" firstAttribute="centerY" secondItem="Yul-M3-jKu" secondAttribute="centerY" id="xrh-Cf-p2j"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseNameLabel" destination="Yul-M3-jKu" id="qCl-gx-P2p"/>
+                                            <outlet property="gradeLabel" destination="fc1-W8-ADV" id="qF9-iG-JGx"/>
+                                            <outlet property="professorNameLabel" destination="TcD-RW-JGy" id="SLP-cd-VAh"/>
+                                            <outlet property="semesterLabel" destination="NVs-IN-R0G" id="ftW-BN-AIt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -549,6 +587,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Previous Classes" id="hX2-4s-iBU"/>
+                    <connections>
+                        <outlet property="coursesTableView" destination="5ZB-wj-AAE" id="Fde-1I-WNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yId-Tg-SGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

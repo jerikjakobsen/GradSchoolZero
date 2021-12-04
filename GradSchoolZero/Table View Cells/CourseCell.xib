@@ -23,22 +23,26 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3T-EX-NEg">
-                        <rect key="frame" x="20" y="55.5" width="122" height="21"/>
+                        <rect key="frame" x="20" y="55.5" width="122" height="18.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Count / Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-sP-hOL">
-                        <rect key="frame" x="20" y="86.5" width="191" height="21"/>
+                        <rect key="frame" x="20" y="84" width="191" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnD-Pg-wJv">
-                        <rect key="frame" x="514" y="96.5" width="90" height="31"/>
-                        <buttonConfiguration key="configuration" style="filled" title="Join Class"/>
+                        <rect key="frame" x="539" y="94" width="65" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="dsk-gT-5r7"/>
+                            <constraint firstAttribute="height" constant="36" id="kHd-AE-3eb"/>
+                        </constraints>
+                        <buttonConfiguration key="configuration" style="filled" title="Join"/>
                         <connections>
-                            <action selector="didTapJoinClass:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pog-U0-vtL"/>
+                            <action selector="didTapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pog-U0-vtL"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGB-se-l5d">
@@ -73,7 +77,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="joinClassButton" destination="AnD-Pg-wJv" id="gJF-1w-oin"/>
+                <outlet property="actionButton" destination="AnD-Pg-wJv" id="P8p-jl-tQe"/>
                 <outlet property="nameLabel" destination="6t8-Uh-6Hy" id="nwr-mx-axb"/>
                 <outlet property="professorNameLabel" destination="v3T-EX-NEg" id="VBU-Dh-ywk"/>
                 <outlet property="studentCountLabel" destination="gCD-sP-hOL" id="n9R-a6-Kp8"/>
