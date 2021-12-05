@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) joinClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error, NSString * message)) completion;
 
-- (void) dropClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error)) completion;
+- (void) dropClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error, NSString *message)) completion;
 
 @end
 

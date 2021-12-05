@@ -22,6 +22,12 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [self.coursesTableView reloadData];
+    [[Student sharedStudent] getEnrolledCourses:^(bool succeeded, NSError * _Nonnull error, NSArray * _Nonnull courses) {
+        if (error == nil) {
+            self.coursesArray = courses;
+            [self.coursesTableView reloadData];
+        }
+    }];
 }
 
 - (void)viewDidLoad {
@@ -46,6 +52,7 @@
     cell.delegate = self;
     [cell configureCell: course];
     [cell.actionButton setHidden: FALSE];
+    cell.actionButton.enabled = TRUE;
     return cell;
 }
 
@@ -61,12 +68,18 @@
 }
 
 - (void)buttonAction:(nonnull NSString *)courseID completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
-    // run drop class route
+    [[Student sharedStudent] dropClass: courseID completion:^(bool succeeded, NSError * _Nonnull error, NSString *message) {
+        NSMutableArray *newCourses = [[NSMutableArray alloc] init];
+        for (Course *c in self.coursesArray) {
+            if (![c.courseid isEqualToString: courseID]) {
+                [newCourses addObject: c];
+            }
+        }
+        self.coursesArray = newCourses;
+        [self.coursesTableView reloadData];
+        completion(message, succeeded);
+    }];
 }
-//
-//- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ((CourseCell *) cell).actionButton.titleLabel.text = [self buttonMessage];
-//}
 
 - (nonnull NSString *)buttonMessage {
     return @"Drop";

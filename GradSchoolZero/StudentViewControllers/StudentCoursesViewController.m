@@ -18,6 +18,16 @@
 
 @implementation StudentCoursesViewController
 
+- (void) viewDidAppear:(BOOL)animated {
+    [[Student sharedStudent] getAvailableCourses:^(bool succeeded, NSError * _Nonnull error, NSArray * _Nonnull courses) {
+        if (error == nil) {
+            self.coursesArray = courses;
+
+            [self.coursesTableView reloadData];
+        }
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.coursesTableView.delegate = self;
@@ -41,6 +51,7 @@
     cell.delegate = self;
     [cell configureCell: course];
     [cell.actionButton setHidden: FALSE];
+    cell.actionButton.enabled = TRUE;
     return cell;
 }
 

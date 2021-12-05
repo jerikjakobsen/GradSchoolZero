@@ -121,4 +121,15 @@ static Student *_sharedStudent = nil;
         }
     }];
 }
+
+- (void) dropClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error, NSString *message)) completion {
+    [APIManager POSTWithRecieving:@"dropCourse" parameters:@{@"courseid": courseID, @"studentid": self.userID} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code, NSDictionary * _Nonnull res) {
+        if (error != nil) {
+            completion(succeeded, error, nil);
+        } else {
+            completion(succeeded, error, res[@"msg"]);
+        }
+    }];
+}
+
 @end
