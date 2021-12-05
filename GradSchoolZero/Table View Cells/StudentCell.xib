@@ -28,15 +28,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldH-m0-ss4">
+                        <rect key="frame" x="382" y="15" width="68" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Report"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LR9-cv-7l4" firstAttribute="top" secondItem="plI-E9-G9D" secondAttribute="bottom" constant="20" id="BeD-Ur-BGx"/>
+                    <constraint firstAttribute="trailing" secondItem="ldH-m0-ss4" secondAttribute="trailing" constant="44" id="HZ8-tF-h9V"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LR9-cv-7l4" secondAttribute="bottom" constant="63" id="M6v-Tf-aYG"/>
                     <constraint firstItem="LR9-cv-7l4" firstAttribute="leading" secondItem="plI-E9-G9D" secondAttribute="leading" id="Q14-Gf-b5U"/>
                     <constraint firstItem="plI-E9-G9D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UVy-e6-6H9"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="LR9-cv-7l4" secondAttribute="trailing" constant="20" id="hAo-uN-NwG"/>
                     <constraint firstItem="plI-E9-G9D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="kPS-nm-tPa"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="plI-E9-G9D" secondAttribute="trailing" constant="20" id="qjL-YK-Xmx"/>
+                    <constraint firstItem="ldH-m0-ss4" firstAttribute="centerY" secondItem="plI-E9-G9D" secondAttribute="centerY" id="ouP-pI-Td8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

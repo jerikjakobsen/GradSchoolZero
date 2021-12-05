@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070AF437275C71B7007C0B9D /* InstructorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070AF435275C71B7007C0B9D /* InstructorCell.m */; };
+		070AF438275C71B7007C0B9D /* InstructorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070AF436275C71B7007C0B9D /* InstructorCell.xib */; };
 		5229105727583DFF00D97CC4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229105627583DFF00D97CC4 /* Course.m */; };
 		52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CB42729D3D7003C73AC /* AppDelegate.m */; };
 		52434CB82729D3D7003C73AC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CB72729D3D7003C73AC /* SceneDelegate.m */; };
@@ -35,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070AF434275C71B7007C0B9D /* InstructorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstructorCell.h; sourceTree = "<group>"; };
+		070AF435275C71B7007C0B9D /* InstructorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstructorCell.m; sourceTree = "<group>"; };
+		070AF436275C71B7007C0B9D /* InstructorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructorCell.xib; sourceTree = "<group>"; };
 		5229105527583DFF00D97CC4 /* Course.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		5229105627583DFF00D97CC4 /* Course.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		52434CB02729D3D7003C73AC /* GradSchoolZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradSchoolZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +173,9 @@
 				52E8175E2749C10A0091BBC2 /* StudentCell.xib */,
 				525BB1A9275BFC490007E0E0 /* ClassCell.h */,
 				525BB1AA275BFC490007E0E0 /* ClassCell.m */,
+				070AF434275C71B7007C0B9D /* InstructorCell.h */,
+				070AF435275C71B7007C0B9D /* InstructorCell.m */,
+				070AF436275C71B7007C0B9D /* InstructorCell.xib */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 			files = (
 				52AFE4A02748B7CA00573F90 /* CourseCell.xib in Resources */,
 				52434CC32729D3DA003C73AC /* LaunchScreen.storyboard in Resources */,
+				070AF438275C71B7007C0B9D /* InstructorCell.xib in Resources */,
 				52434CC02729D3DA003C73AC /* Assets.xcassets in Resources */,
 				52434CBE2729D3D7003C73AC /* Main.storyboard in Resources */,
 				52E817602749C10A0091BBC2 /* StudentCell.xib in Resources */,
@@ -293,6 +302,7 @@
 				52F2C0272757185900072AED /* ApplyAsInstructorViewController.m in Sources */,
 				52E1F7072749D5FE0058AE44 /* Student.m in Sources */,
 				52434CB82729D3D7003C73AC /* SceneDelegate.m in Sources */,
+				070AF437275C71B7007C0B9D /* InstructorCell.m in Sources */,
 				52E8175F2749C10A0091BBC2 /* StudentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
