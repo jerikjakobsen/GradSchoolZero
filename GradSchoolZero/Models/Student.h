@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (Student *) sharedStudent;
 
-// Add more details to applyAsStudent
+- (bool) isEqualStudent:(Student *) student;
+
 + (void) applyAsStudent: (NSString *) firstname lastname: (NSString *) lastname email: (NSString *) email gpa: (NSString *) gpa program: (NSString *) program gradYear: (NSString *) gradYear;
 
 + (void) getAllStudents: (void (^)(bool succeeded, NSError *, NSArray *)) completion;

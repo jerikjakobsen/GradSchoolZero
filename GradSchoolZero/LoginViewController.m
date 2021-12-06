@@ -48,16 +48,17 @@
                     [self performSegueWithIdentifier:@"toStudent" sender: self];
                 }
             } else if ([userType isEqualToString: @"instructor"]) {
+                [Instructor setSharedInstructor: userID];
                 if ([period isEqualToString: @"pre-registration"]) {
-                    
+                    [self performSegueWithIdentifier:@"toInstructor" sender:self];
                 } else if ([period isEqualToString: @"registration"] || [period isEqualToString: @"special-registration"]) {
-                    
+                    [self performSegueWithIdentifier:@"toInstructor" sender:self];
                 } else if ([period isEqualToString: @"course-run"]) {
-                    
+                    [self performSegueWithIdentifier:@"toInstructor" sender:self];
                 } else if ([period isEqualToString: @"review"]) {
-                    
+                    [self performSegueWithIdentifier:@"toInstructor" sender:self];
                 } else if ([period isEqualToString:@"grading"]) {
-                    
+                    [self performSegueWithIdentifier:@"toInstructor" sender:self];
                 }
             } else {
                 if ([period isEqualToString: @"pre-registration"]) {

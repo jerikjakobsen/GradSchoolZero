@@ -20,4 +20,13 @@
     // Configure the view for the selected state
 }
 
+- (void) configureCell: (Instructor *) instructor {
+    self.instructor = instructor;
+    self.instructorName.text = instructor.name;
+    
+}
+- (IBAction)didTapReport:(id)sender {
+    [self.delegate didReport: self.instructor];
+}
+
 @end

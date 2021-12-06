@@ -13,6 +13,9 @@
 
 static Student *_sharedStudent = nil;
 
+- (bool) isEqualStudent:(Student *) student {
+    return [self.userID isEqualToString:student.userID];
+}
 
 + (Student *) sharedStudent {
     @synchronized ([Student class]) {

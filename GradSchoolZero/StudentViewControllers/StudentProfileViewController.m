@@ -20,9 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    while (![Student sharedStudent].name) {
+        self.studentNameLabel.text = [Student sharedStudent].name;
+        self.studentGPALabel.text = [NSString stringWithFormat: @"GPA: %@", [Student sharedStudent].GPA];
+        self.studentWarningsLabel.text = [NSString stringWithFormat: @"Warnings: %@", [Student sharedStudent].warnings];
+    }
     self.studentNameLabel.text = [Student sharedStudent].name;
     self.studentGPALabel.text = [NSString stringWithFormat: @"GPA: %@", [Student sharedStudent].GPA];
     self.studentWarningsLabel.text = [NSString stringWithFormat: @"Warnings: %@", [Student sharedStudent].warnings];
+    
 }
 
 @end

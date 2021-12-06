@@ -21,9 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * startTime;
 @property (nonatomic, strong) NSString * endTime;
 
+- (void) setActive: (bool) active;
+- (bool) isActive;
+
+- (bool) isEqualCourse: (Course *) course;
+
 + (void) getCourses: (void (^)(NSError * error, NSArray* courses)) completion;
 
-- (instancetype) initWithName: (NSString *) name courseID: (NSString *) courseID capacity: (NSString *) capacity studentCount: (NSString *) studentCount instructorid: (NSString *) instructorid instructorName: (NSString *) instructorName days: (NSString *) days startTime: (NSString *) startTime endTime: (NSString *) endTime;
+- (instancetype) initWithName: (NSString *) name courseID: (NSString *) courseID capacity: (NSString *) capacity studentCount: (NSString *) studentCount instructorid: (NSString *) instructorid instructorName: (NSString *) instructorName days: (NSString *) days startTime: (NSString *) startTime endTime: (NSString *) endTime active: (bool) active;
 
 - (instancetype) initWithJSON: (NSDictionary *) json;
 
