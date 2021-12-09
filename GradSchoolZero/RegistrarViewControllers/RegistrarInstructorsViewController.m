@@ -36,13 +36,12 @@
     }];
 }
 
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     InstructorCell *cell = [self.instructorsTableView dequeueReusableCellWithIdentifier:@"InstructorCell" forIndexPath:indexPath];
     Instructor *ins = self.instructors[indexPath.row];
     [cell configureCell: ins];
     cell.delegate = self;
-    cell.action1Button.titleLabel.text = @"Fire";
+    [cell.action1Button setHidden: TRUE];
     return cell;
 }
 

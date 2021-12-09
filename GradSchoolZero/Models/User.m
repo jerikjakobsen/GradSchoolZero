@@ -155,7 +155,20 @@ static User *_sharedUser = nil;
     [APIManager POST:@"addTabooWords" parameters:@{@"taboo": tabooWord} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code) {
         completion(succeeded, error);
     }];
+    
 }
 
++ (void) createCourse: (NSString *) instructorID name: (NSString *) name cap: (NSString *) cap days: (NSString *) days startTime: (NSString *) startTime endTime: (NSString *) endTime completion: (void (^)(bool succeeded, NSError * error)) completion {
+    NSDictionary *params = @{@"name": name, @"capacity": cap, @"instructorid": instructorID, @"days": days, @"startTime": startTime, @"endTime": endTime };
+    [APIManager POST:@"createCourse" parameters:params completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code) {
+        completion(succeeded, error);
+    }];
+}
+
++ (void) updatePeriod: (NSString *) period completion: (void (^)(bool succeeded, NSError * error)) completion {
+    [APIManager POST:@"setSemesterPeriod" parameters:@{@"period": period} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code) {
+        completion(succeeded, error);
+    }];
+}
 
 @end

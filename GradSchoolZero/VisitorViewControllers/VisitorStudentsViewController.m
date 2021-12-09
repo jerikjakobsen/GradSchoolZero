@@ -35,7 +35,8 @@
     StudentCell *cell = [self.studentsTableView dequeueReusableCellWithIdentifier: @"StudentCell"];
     Student *student = self.studentArray[indexPath.row];
     [cell configureCell: student.name gpa: student.GPA];
-    
+    [cell.action1Button setHidden: TRUE];
+    [cell.action2Button setHidden: TRUE];
     return cell;
 }
 

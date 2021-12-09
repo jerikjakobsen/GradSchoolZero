@@ -12,6 +12,8 @@
 		5202CA00275DC7F20028745D /* WaitlistedStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5202C9FF275DC7F20028745D /* WaitlistedStudentCell.m */; };
 		5202CA03275DCB2A0028745D /* InstructorWaitlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5202CA02275DCB2A0028745D /* InstructorWaitlistViewController.m */; };
 		5229105727583DFF00D97CC4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 5229105627583DFF00D97CC4 /* Course.m */; };
+		52432C7927629B450086EE2D /* CreateCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52432C7827629B450086EE2D /* CreateCourseViewController.m */; };
+		52432C7C2762BE2B0086EE2D /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52432C7B2762BE2B0086EE2D /* TabbarViewController.m */; };
 		52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CB42729D3D7003C73AC /* AppDelegate.m */; };
 		52434CB82729D3D7003C73AC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52434CB72729D3D7003C73AC /* SceneDelegate.m */; };
 		52434CBE2729D3D7003C73AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52434CBC2729D3D7003C73AC /* Main.storyboard */; };
@@ -62,6 +64,10 @@
 		5202CA02275DCB2A0028745D /* InstructorWaitlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstructorWaitlistViewController.m; sourceTree = "<group>"; };
 		5229105527583DFF00D97CC4 /* Course.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		5229105627583DFF00D97CC4 /* Course.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		52432C7727629B450086EE2D /* CreateCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateCourseViewController.h; sourceTree = "<group>"; };
+		52432C7827629B450086EE2D /* CreateCourseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateCourseViewController.m; sourceTree = "<group>"; };
+		52432C7A2762BE2B0086EE2D /* TabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
+		52432C7B2762BE2B0086EE2D /* TabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		52434CB02729D3D7003C73AC /* GradSchoolZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradSchoolZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52434CB32729D3D7003C73AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52434CB42729D3D7003C73AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -182,6 +188,8 @@
 				52E15C072755E711008B9D5A /* APIManager.m */,
 				5263528A275DD38500DC76C3 /* ReportViewController.h */,
 				5263528B275DD38500DC76C3 /* ReportViewController.m */,
+				52432C7A2762BE2B0086EE2D /* TabbarViewController.h */,
+				52432C7B2762BE2B0086EE2D /* TabbarViewController.m */,
 			);
 			path = GradSchoolZero;
 			sourceTree = "<group>";
@@ -214,6 +222,8 @@
 				524A1EB1276204BA00429680 /* ReportReviewViewController.m */,
 				524A1EB3276291EC00429680 /* RegistrarActionHubViewController.h */,
 				524A1EB4276291EC00429680 /* RegistrarActionHubViewController.m */,
+				52432C7727629B450086EE2D /* CreateCourseViewController.h */,
+				52432C7827629B450086EE2D /* CreateCourseViewController.m */,
 			);
 			path = RegistrarViewControllers;
 			sourceTree = "<group>";
@@ -380,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52434CCF2729D540003C73AC /* LoginViewController.m in Sources */,
+				52432C7927629B450086EE2D /* CreateCourseViewController.m in Sources */,
 				52E817582749BA380091BBC2 /* User.m in Sources */,
 				5202CA03275DCB2A0028745D /* InstructorWaitlistViewController.m in Sources */,
 				52633A8A275D570100FD29BE /* InstructorCourseStudentsViewController.m in Sources */,
@@ -395,6 +406,7 @@
 				52434CB52729D3D7003C73AC /* AppDelegate.m in Sources */,
 				5202CA00275DC7F20028745D /* WaitlistedStudentCell.m in Sources */,
 				524A1EA62761C32300429680 /* StudentApplicationCell.m in Sources */,
+				52432C7C2762BE2B0086EE2D /* TabbarViewController.m in Sources */,
 				52434CC62729D3DA003C73AC /* main.m in Sources */,
 				524A1EA92761C51300429680 /* GraduationApplicationCell.m in Sources */,
 				524A1EA02761BEA800429680 /* InstructorApplicationCell.m in Sources */,

@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (void) getReports: (void (^)(bool succeeded, NSError * error, NSArray *reports)) completion;
 
 + (void) submitTabooWord: (NSString *) taoboWord completion: (void (^)(bool succeeded, NSError * error)) completion;
++ (void) createCourse: (NSString *) instructorID name: (NSString *) name cap: (NSString *) cap days: (NSString *) days startTime: (NSString *) startTime endTime: (NSString *) endTime completion: (void (^)(bool succeeded, NSError * error)) completion;
+
++ (void) updatePeriod: (NSString *) period completion: (void (^)(bool succeeded, NSError * error)) completion;
 
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *userType;

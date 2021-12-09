@@ -8,6 +8,7 @@
 #import "RegistrarStudentsViewController.h"
 #import "../Models/Student.h"
 #import "../Table View Cells/StudentCell.h"
+#import "RegistrarStudentProfileViewController.h"
 
 @interface RegistrarStudentsViewController () <StudentCellDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -49,6 +50,7 @@
     StudentCell *cell = [self.studentsTableView dequeueReusableCellWithIdentifier: @"StudentCell"];
     Student *s = self.students[indexPath.row];
     [cell configureCell: s];
+    cell.action1Button.hidden = TRUE;
     cell.action1Button.titleLabel.text = @"Expell";
     cell.action2Button.hidden = true;
     return cell;
@@ -58,5 +60,13 @@
     return self.students.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"toStudentProfile" sender: self.students[indexPath.row]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    RegistrarStudentProfileViewController *vc = segue.destinationViewController;
+    vc.student = sender;
+}
 
 @end

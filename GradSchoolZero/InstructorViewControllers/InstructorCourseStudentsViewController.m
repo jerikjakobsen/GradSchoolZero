@@ -40,7 +40,7 @@
     StudentCell *cell = [self.studentsTableView dequeueReusableCellWithIdentifier: @"StudentCell"];
     [cell configureCell: student];
     cell.delegate = self;
-    if ([[User sharedUser].period isEqualToString: @"grading"]) {
+    if ([[User sharedUser].period isEqualToString: @"grading period"]) {
         cell.action2Button.hidden = FALSE;
     }
     return cell;

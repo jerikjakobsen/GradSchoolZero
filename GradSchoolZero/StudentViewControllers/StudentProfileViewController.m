@@ -19,7 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if (![[User sharedUser].period isEqualToString: @"course registration period"]) {
+        NSMutableArray *arr = [NSMutableArray arrayWithArray: [self.tabBarController viewControllers]];
+        [arr removeObjectAtIndex: 1];
+        [self.tabBarController setViewControllers: arr];
+    }
+    
     while (![Student sharedStudent].name) {
         self.studentNameLabel.text = [Student sharedStudent].name;
         self.studentGPALabel.text = [NSString stringWithFormat: @"GPA: %@", [Student sharedStudent].GPA];
