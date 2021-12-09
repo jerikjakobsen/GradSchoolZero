@@ -27,6 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) reviewStudentApplication: (NSString *) appID decision: (bool) decision completion: (void (^)(bool succeeded, NSError * error)) completion;
 
++ (void) reviewReport: (NSString *) reportID decision: (bool) decision completion: (void (^)(bool succeeded, NSError * error)) completion;
++ (void) getReports: (void (^)(bool succeeded, NSError * error, NSArray *reports)) completion;
+
++ (void) submitTabooWord: (NSString *) taoboWord completion: (void (^)(bool succeeded, NSError * error)) completion;
+
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *userType;
 @property (nonatomic, strong) NSString *period;

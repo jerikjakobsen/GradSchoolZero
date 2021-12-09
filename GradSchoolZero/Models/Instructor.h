@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) getWaitlistedStudents: (void (^)(bool succeeded, NSError * error, NSArray *data)) completion;
 
 - (void) reviewWaitlistedStudents: (bool) decision courseid: (NSString *) courseid studentid: (NSString *) studentid completion: (void (^)(bool succeeded, NSError * error, NSString *message)) completion;
-
+- (void)reportStudent:(NSString *)studentID name: (NSString *) name reason:(NSString *)reason completion:(void (^)(bool, NSError * _Nonnull))completion;
 @end
 
 NS_ASSUME_NONNULL_END

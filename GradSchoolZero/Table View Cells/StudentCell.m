@@ -33,7 +33,7 @@
 
 }
 - (IBAction)didTapAction1:(id)sender {
-    [self.delegate action1: self.student.userID completion:^(NSString * _Nonnull message, bool succeeded) {
+    [self.delegate action1: self.student completion:^(NSString * _Nonnull message, bool succeeded) {
             if (succeeded) {
                 [self.delegate presentErrorMessage:@"Report Successful"];
             }
@@ -42,7 +42,7 @@
 
 - (IBAction)didTapAction2:(id)sender {
     NSLog(@"ACTION 2 before");
-    [self.delegate action2: self.student.userID completion:^(NSString * _Nonnull message, bool succeeded) {
+    [self.delegate action2: self.student completion:^(NSString * _Nonnull message, bool succeeded) {
         NSLog(@"ACTION 2");
     }];
 }

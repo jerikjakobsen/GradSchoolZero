@@ -29,12 +29,14 @@
     [self.studentsAndInstructorsTableView registerNib:nib forCellReuseIdentifier:@"StudentCell"];
     UINib *nib2 = [UINib nibWithNibName:@"InstructorCell" bundle:nil];
     [self.studentsAndInstructorsTableView registerNib:nib2 forCellReuseIdentifier:@"InstructorCell"];
-    [Instructor getAllInstructors:^(bool succeeded, NSError * _Nonnull error, NSArray * _Nonnull instructors) {
-        if (succeeded) {
-            self.instructors = instructors;
-            [self.studentsAndInstructorsTableView reloadData];
-        }
-    }];
+    if (![[User sharedUser].userType isEqualToString: @"instructor"]) {
+        [Instructor getAllInstructors:^(bool succeeded, NSError * _Nonnull error, NSArray * _Nonnull instructors) {
+            if (succeeded) {
+                self.instructors = instructors;
+                [self.studentsAndInstructorsTableView reloadData];
+            }
+        }];
+    }
     [Student getAllStudents:^(bool succeeded, NSError * _Nonnull error, NSArray * _Nonnull students) {
         if (succeeded) {
             self.students = students;
@@ -82,11 +84,32 @@
     return @"";
 }
 
-- (void)action1:(nonnull NSString *)message completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
-    // REPORT STUDENT
+- (void)action1:(nonnull Student *)student completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
+    if ([[User sharedUser].userType isEqualToString: @"student"]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Report Student" message:@"Write Complaint" preferredStyle: UIAlertControllerStyleAlert ];
+        [alert addTextFieldWithConfigurationHandler:nil];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[Student sharedStudent] reportStudent:student.userID name:student.name reason:alert.textFields[0].text completion:^(bool succeeded, NSError * _Nonnull error) {
+                    if (!succeeded) NSLog(@"%@", error.localizedDescription);
+            }];
+        }];
+        [alert addAction: action];
+        [self presentViewController:alert animated:YES completion: nil];
+    }
+    if ([[User sharedUser].userType isEqualToString: @"instructor"]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Report Student" message:@"Write Complaint" preferredStyle: UIAlertControllerStyleAlert ];
+        [alert addTextFieldWithConfigurationHandler:nil];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[Instructor sharedInstructor] reportStudent:student.userID name:student.name reason:alert.textFields[0].text completion:^(bool succeeded, NSError * _Nonnull error) {
+                    if (!succeeded) NSLog(@"%@", error.localizedDescription);
+            }];
+        }];
+        [alert addAction: action];
+        [self presentViewController:alert animated:YES completion: nil];
+    }
 }
 
-- (void)action2:(nonnull NSString *)message completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
+- (void)action2:(nonnull Student *)student completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
     // DO NOTHING
 }
 
@@ -95,7 +118,15 @@
 }
 
 - (void)didTapAction1:(nonnull Instructor *)instructor {
-    //REPORT INSTRUCTOR
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Report Instructor" message:@"Write Complaint" preferredStyle: UIAlertControllerStyleAlert ];
+    [alert addTextFieldWithConfigurationHandler:nil];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[Student sharedStudent] reportProfessor:instructor.userID name:instructor.name reason:alert.textFields[0].text completion:^(bool succeeded, NSError * _Nonnull error) {
+                if (!succeeded) NSLog(@"%@", error.localizedDescription);
+        }];
+    }];
+    [alert addAction: action];
+    [self presentViewController:alert animated:YES completion: nil];
 }
 
 @end

@@ -23,14 +23,16 @@
 - (void) configureCell: (Student *) student appID: (NSString *) appID {
     self.nameLabel.text = student.name;
     self.currentGPALabel.text = [NSString stringWithFormat: @"%@", student.GPA];
+    self.appID = appID;
+    self.student = student;
 }
 
 - (IBAction)acceptApplication:(id)sender {
-    [self.delegate graduationAction1: self.appID];
+    [self.delegate graduationAction1: self.student.userID];
 }
 
 - (IBAction)denyApplication:(id)sender {
-    [self.delegate graduationAction2: self.appID];
+    [self.delegate graduationAction2: self.student.userID];
 }
 
 @end

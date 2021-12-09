@@ -33,9 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) getEnrolledCourses: (void (^)(bool succeeded, NSError * error, NSArray *)) completion;
 
-- (void) reportProfessor: (NSString *) profID reason: (NSString *) reason completion:(void (^)(bool succeeded, NSError * error)) completion;
+- (void) reportProfessor: (NSString *) profID name: (NSString *) name reason: (NSString *) reason completion:(void (^)(bool succeeded, NSError * error)) completion;
 
-- (void) reportStudent: (NSString *) studentID reason: (NSString *) reason completion: (void (^)(bool succeeded, NSError * error)) completion;
+- (void)reportStudent:(NSString *)studentID name: (NSString *) name reason:(NSString *)reason completion:(void (^)(bool, NSError * _Nonnull))completion;
 
 - (void) applyForGraduation: (void (^)(bool succeeded, NSError * error, NSString *message)) completion;
 

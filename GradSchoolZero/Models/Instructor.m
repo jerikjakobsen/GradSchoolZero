@@ -132,12 +132,21 @@ bool _suspended = FALSE;
                 Instructor *i = [[Instructor alloc] init];
                 i.name =  [[((NSString *) iJSON[@"firstname"]) stringByAppendingString:@" "] stringByAppendingString:  ((NSString *) iJSON[@"lastname"])];
                 i.warnings = iJSON[@"warnings"];
+                i.userID = iJSON[@"id"];
+                i.userType = @"instructor";
                 [instructorsArr addObject: i];
             }
             completion(succeeded, error, instructorsArr);
         } else {
             completion(succeeded, error, nil);
         }
+    }];
+}
+
+- (void)reportStudent:(NSString *)studentID name: (NSString *) name reason:(NSString *)reason completion:(void (^)(bool, NSError * _Nonnull))completion {
+    NSDictionary *params = @{@"reporterName": self.name, @"reporterID": self.userID, @"reporterType": @"instructor", @"reportedName": name, @"reportedID": studentID, @"reportedType":@"student",@"writtenReport": reason};
+    [APIManager POSTWithRecieving:@"submitReport" parameters: params completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code, NSDictionary * _Nonnull res) {
+        completion(succeeded, error);
     }];
 }
 

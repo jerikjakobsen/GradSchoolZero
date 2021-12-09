@@ -10,6 +10,7 @@
 #import "../Table View Cells/StudentApplicationCell.h"
 #import "../Table View Cells/GraduationApplicationCell.h"
 #import "../Models/User.h"
+#import "RegistrarStudentProfileViewController.h"
 
 @interface RegistrarApplicationsViewController () <UITableViewDelegate, UITableViewDataSource, InstructorApplicationCellDelegate, StudentApplicationCellDelegate, GraduationApplicationCellDelegate>
 
@@ -157,12 +158,12 @@
 - (void)graduationAction1:(nonnull NSString *)appID {
     [User reviewGraduationApplication:appID decision:true completion:^(bool succeeded, NSError * _Nonnull error) {
         NSMutableArray *newGradApps = [[NSMutableArray alloc] init];
-        for (NSDictionary *s in self.studentApps) {
+        for (NSDictionary *s in self.graduationApps) {
             if (![s[@"appID"] isEqualToString: appID]) {
                 [newGradApps addObject: s];
             }
         }
-        self.studentApps = newGradApps;
+        self.graduationApps = newGradApps;
         [self.applicationsTableView reloadData];
     }];
 }
@@ -170,14 +171,24 @@
 - (void)graduationAction2:(nonnull NSString *)appID {
     [User reviewGraduationApplication:appID decision:false completion:^(bool succeeded, NSError * _Nonnull error) {
         NSMutableArray *newGradApps = [[NSMutableArray alloc] init];
-        for (NSDictionary *s in self.studentApps) {
+        for (NSDictionary *s in self.graduationApps) {
             if (![s[@"appID"] isEqualToString: appID]) {
                 [newGradApps addObject: s];
             }
         }
-        self.studentApps = newGradApps;
+        self.graduationApps = newGradApps;
         [self.applicationsTableView reloadData];
     }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier: @"toStudentDetail" sender: self.graduationApps[indexPath.row][@"student"] ];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    Student *s = sender;
+    RegistrarStudentProfileViewController *vc = segue.destinationViewController;
+    vc.student = s;
 }
 
 @end

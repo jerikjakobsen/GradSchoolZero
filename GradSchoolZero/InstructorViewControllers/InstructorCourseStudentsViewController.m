@@ -8,6 +8,7 @@
 #import "InstructorCourseStudentsViewController.h"
 #import "../Models/Instructor.h"
 #import "../Table View Cells/StudentCell.h"
+#import "../Models/Student.h"
 
 @interface InstructorCourseStudentsViewController () <UITableViewDelegate, UITableViewDataSource, StudentCellDelegate>
 
@@ -54,12 +55,11 @@
     // Report Student Here, Note message contains the students id
 }
 
-- (void)action2:(nonnull NSString *)message completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
-    NSLog(@"action action action");
+- (void)action2:(nonnull Student *)student completion:(nonnull void (^)(NSString * _Nonnull, bool))completion {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Assign Grade" message:@"" preferredStyle: UIAlertControllerStyleAlert ];
     [alert addTextFieldWithConfigurationHandler:nil];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[Instructor sharedInstructor] assignGrade:self.course.courseid studentid:message grade:alert.textFields[0].text completion:^(bool succeeded, NSError * _Nonnull error, NSString * _Nonnull message) {
+        [[Instructor sharedInstructor] assignGrade: self.course.courseid studentid:student.userID grade:alert.textFields[0].text completion:^(bool succeeded, NSError * _Nonnull error, NSString * _Nonnull message) {
             if (!succeeded) NSLog(@"%@", error.localizedDescription);
             else NSLog(@"%@", message);
         }];

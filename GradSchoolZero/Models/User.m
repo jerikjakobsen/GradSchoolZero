@@ -122,11 +122,40 @@ static User *_sharedUser = nil;
     } else {
         dec = @"1";
     }
-
-    
-    [APIManager GET:@"reviewGraduationApplication" parameters:@{@"id": appID, @"decision": dec} completion:^(bool succeeded, NSError * _Nonnull error, NSDictionary * _Nonnull res, NSInteger code) {
+    [APIManager POST:@"reviewGraduationApplication" parameters:@{@"studentid": appID, @"decision": dec} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code) {
+        NSLog(@"%ld", code);
         completion(succeeded, error);
     }];
 }
+
++ (void) reviewReport: (NSString *) reportID decision: (bool) decision completion: (void (^)(bool succeeded, NSError * error)) completion {
+    NSString *dec = @"";
+    if (decision) {
+        dec = @"1";
+    } else {
+        dec = @"0";
+    }
+    [APIManager POST:@"reviewReport" parameters:@{@"id": reportID, @"decision": dec} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code) {
+        NSLog(@"%ld", code);
+        completion(succeeded, error);
+    }];
+}
+
++ (void) getReports: (void (^)(bool succeeded, NSError * error, NSArray *reports)) completion {
+    [APIManager GET:@"getReports" parameters:@{} completion:^(bool succeeded, NSError * _Nonnull error, NSDictionary * _Nonnull apps, NSInteger code) {
+        if (succeeded) {
+            completion(succeeded, error, apps[@"data"]);
+        } else {
+            completion(succeeded, error, nil);
+        }
+    }];
+}
+
++ (void) submitTabooWord: (NSString *) tabooWord completion: (void (^)(bool succeeded, NSError * error)) completion {
+    [APIManager POST:@"addTabooWords" parameters:@{@"taboo": tabooWord} completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code) {
+        completion(succeeded, error);
+    }];
+}
+
 
 @end

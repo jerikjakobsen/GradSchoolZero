@@ -18,6 +18,10 @@
 
 @implementation RegistrarInstructorsViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.instructorsTableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     UINib *nib = [UINib nibWithNibName: @"InstructorCell" bundle:nil];
@@ -36,7 +40,6 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     InstructorCell *cell = [self.instructorsTableView dequeueReusableCellWithIdentifier:@"InstructorCell" forIndexPath:indexPath];
     Instructor *ins = self.instructors[indexPath.row];
-    NSLog(@"%@", ins.name);
     [cell configureCell: ins];
     cell.delegate = self;
     cell.action1Button.titleLabel.text = @"Fire";

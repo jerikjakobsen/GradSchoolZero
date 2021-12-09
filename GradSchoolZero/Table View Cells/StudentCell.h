@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol StudentCellDelegate
 
 - (void) presentErrorMessage: (NSString *) message;
-- (void) action1: (NSString *) message completion: (void (^)(NSString *message, bool succeeded)) completion;
-- (void) action2: (NSString *) message completion: (void (^)(NSString *message, bool succeeded)) completion;
+- (void) action1: (Student *) student completion: (void (^)(NSString *message, bool succeeded)) completion;
+- (void) action2: (Student *) student completion: (void (^)(NSString *message, bool succeeded)) completion;
 
 @end
 

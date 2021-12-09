@@ -142,4 +142,18 @@ static Student *_sharedStudent = nil;
     }];
 }
 
+- (void)reportStudent:(NSString *)studentID name: (NSString *) name reason:(NSString *)reason completion:(void (^)(bool, NSError * _Nonnull))completion {
+    NSDictionary *params = @{@"reporterName": self.name, @"reporterID": self.userID, @"reporterType": @"student", @"reportedName": name, @"reportedID": studentID, @"reportedType":@"student",@"writtenReport": reason};
+    [APIManager POSTWithRecieving:@"submitReport" parameters: params completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code, NSDictionary * _Nonnull res) {
+        completion(succeeded, error);
+    }];
+    
+}
+
+- (void)reportProfessor:(NSString *)profID name: (NSString *) name reason:(NSString *)reason completion:(void (^)(bool, NSError * _Nonnull))completion {
+    NSDictionary *params = @{@"reporterName": self.name, @"reporterID": self.userID, @"reporterType": @"student", @"reportedName": name, @"reportedID": profID, @"reportedType":@"instructor",@"writtenReport": reason};
+    [APIManager POSTWithRecieving:@"submitReport" parameters: params completion:^(bool succeeded, NSError * _Nonnull error, NSInteger code, NSDictionary * _Nonnull res) {
+        completion(succeeded, error);
+    }];
+}
 @end
