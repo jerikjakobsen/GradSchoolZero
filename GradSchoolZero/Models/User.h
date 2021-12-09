@@ -13,12 +13,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (User *) sharedUser;
 
-+ (void) login: (NSString *) type email: (NSString *) email password: (NSString *) password completion: (void (^)(bool authenticated, NSError * error, NSString * period, NSString *userID)) completion;
++ (void) login: (NSString *) type email: (NSString *) email password: (NSString *) password completion: (void (^)(bool authenticated, NSError * error, NSString * period, NSString *userID, NSString *message)) completion;
+
++ (void) getStudentApplications: (void (^)(bool succeeded, NSError * error, NSArray *applications)) completion;
+
++ (void) getInstructorApplications: (void (^)(bool succeeded, NSError * error, NSArray *applications)) completion;
+
++ (void) getGraduationApplications: (void (^)(bool succeeded, NSError * error, NSArray *applications)) completion;
+
++ (void) reviewGraduationApplication: (NSString *) appID decision: (bool) decision completion: (void (^)(bool succeeded, NSError * error)) completion;
+
++ (void) reviewInstructorApplication: (NSString *) appID decision: (bool) decision completion: (void (^)(bool succeeded, NSError * error)) completion;
+
++ (void) reviewStudentApplication: (NSString *) appID decision: (bool) decision completion: (void (^)(bool succeeded, NSError * error)) completion;
 
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *userType;
 @property (nonatomic, strong) NSString *period;
-
 
 @end
 

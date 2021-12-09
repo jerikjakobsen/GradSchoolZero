@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) reportStudent: (NSString *) studentID reason: (NSString *) reason completion: (void (^)(bool succeeded, NSError * error)) completion;
 
-- (void) applyForGraduation: (void (^)(bool succeeded, NSError * error)) completion;
+- (void) applyForGraduation: (void (^)(bool succeeded, NSError * error, NSString *message)) completion;
 
 - (void) joinClass: (NSString *) courseID completion: (void (^)(bool succeeded, NSError * error, NSString * message)) completion;
 

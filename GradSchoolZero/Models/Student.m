@@ -135,4 +135,11 @@ static Student *_sharedStudent = nil;
     }];
 }
 
+- (void) applyForGraduation: (void (^)(bool succeeded, NSError * error, NSString *message)) completion {
+    [APIManager GET:@"applyForGraduation" parameters:@{@"studentid": self.userID} completion:^(bool succeeded, NSError * _Nonnull error, NSDictionary * _Nonnull res, NSInteger code) {
+        completion(succeeded, error, res[@"msg"]);
+
+    }];
+}
+
 @end

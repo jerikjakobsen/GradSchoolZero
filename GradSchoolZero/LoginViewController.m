@@ -29,7 +29,7 @@
 - (IBAction)didLogin:(id)sender {
     NSArray *types = @[@"student", @"instructor", @"registrar"];
     NSString* userType = types[[self.userTypeSegment selectedSegmentIndex]];
-    [User login: userType email: self.emailField.text password: self.passwordField.text completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID) {
+    [User login: userType email: self.emailField.text password: self.passwordField.text completion:^(bool authenticated, NSError * _Nonnull error, NSString * _Nonnull period, NSString *userID, NSString *message) {
         NSLog(@"period");
         if (authenticated) {
             self.emailField.text = @"";
@@ -62,21 +62,24 @@
                 }
             } else {
                 if ([period isEqualToString: @"pre-registration"]) {
-                    
+                    [self performSegueWithIdentifier:@"toRegistrar" sender:self];
                 } else if ([period isEqualToString: @"registration"] || [period isEqualToString: @"special-registration"]) {
-                    
+                    [self performSegueWithIdentifier:@"toRegistrar" sender:self];
                 } else if ([period isEqualToString: @"course-run"]) {
-                    
+                    [self performSegueWithIdentifier:@"toRegistrar" sender:self];
                 } else if ([period isEqualToString: @"review"]) {
-                    
+                    [self performSegueWithIdentifier:@"toRegistrar" sender:self];
                 } else if ([period isEqualToString:@"grading"]) {
-                    
+                    [self performSegueWithIdentifier:@"toRegistrar" sender:self];
                 }
             }
             
             
         } else {
-            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Message" message:message preferredStyle: UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction: action];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }

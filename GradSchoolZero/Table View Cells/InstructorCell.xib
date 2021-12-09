@@ -53,6 +53,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="action1Button" destination="p2E-Yw-DZQ" id="c00-0P-aJa"/>
                 <outlet property="instructorName" destination="pro-rv-NWP" id="ros-uz-6Xk"/>
                 <outlet property="instructorRating" destination="ahZ-KQ-k4G" id="eYv-VL-j0T"/>
             </connections>

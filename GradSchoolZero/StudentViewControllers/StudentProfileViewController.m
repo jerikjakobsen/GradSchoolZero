@@ -30,5 +30,13 @@
     self.studentWarningsLabel.text = [NSString stringWithFormat: @"Warnings: %@", [Student sharedStudent].warnings];
     
 }
+- (IBAction)applyForGraduation:(id)sender {
+    [[Student sharedStudent] applyForGraduation:^(bool succeeded, NSError * _Nonnull error, NSString * _Nonnull message) {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Message" message:message preferredStyle: UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction: action];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
+}
 
 @end

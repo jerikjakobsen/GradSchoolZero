@@ -94,7 +94,7 @@
     // DO NOTHING
 }
 
-- (void)didReport:(nonnull Instructor *)instructor {
+- (void)didTapAction1:(nonnull Instructor *)instructor {
     //REPORT INSTRUCTOR
 }
 

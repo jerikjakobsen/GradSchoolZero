@@ -26,7 +26,7 @@
     
 }
 - (IBAction)didTapReport:(id)sender {
-    [self.delegate didReport: self.instructor];
+    [self.delegate didTapAction1: self.instructor];
 }
 
 @end

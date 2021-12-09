@@ -12,12 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol InstructorCellDelegate
 
-- (void) didReport: (Instructor *) instructor;
+- (void) didTapAction1: (Instructor *) instructor;
 
 @end
 
 @interface InstructorCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *action1Button;
 @property (weak, nonatomic) id<InstructorCellDelegate> delegate;
 @property (strong, nonatomic) Instructor *instructor;
 @property (weak, nonatomic) IBOutlet UILabel *instructorName;
